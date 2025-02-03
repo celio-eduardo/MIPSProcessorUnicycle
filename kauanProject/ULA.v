@@ -1,19 +1,19 @@
-module MIPS_ULA (
+module ULA (
     input wire [3:0] ULAopcode,
     input wire [31:0] A,
     input wire [31:0] B,
-	 input clock,
     output reg [31:0] R,
     output reg Z,
     output reg O
 );
 
     // Sinais internos
+	 reg [31:0] sub_slt;
     reg [31:0] result;
     reg overflow;
 
     // Lógica da ULA
-    always @(posedge clock) begin
+    always @(*) begin
         case (ULAopcode)
             // AND
             4'b0000: begin
@@ -32,42 +32,24 @@ module MIPS_ULA (
                 result = A + B;
                 overflow = ((A[31] ~^ B[31]) & (A[31] ^ result[31]));
             end
-
-            // Addu
-            4'b0011: begin
-                result = A + B;
-                overflow = 1'b0;
-            end
-
+				
             // Sub
-            4'b0100: begin
+            4'b0110: begin
                 result = A - B;
+					 // Ainda falta lidar com o overflow
                 overflow = ((A[31] ~^ ~B[31]) & (A[31] ^ result[31]));
             end
 
-            // Subu
-            4'b0101: begin
-                result = A - B;
-                overflow = 1'b0;
-            end
-
             // Slt
-            4'b0110: begin
-                if ($signed(B) > $signed(A)) begin
-                    result = {31'b0, 1'b1};
-                end else begin
-                    result = 32'b0;
-                end
+            4'b0111: begin
+                sub_slt = A - B;
+					 result = {{31'b0}, sub_slt[31]};
                 overflow = 1'b0;
             end
-
-            // sltu
-            4'b0111: begin
-                if (B > A) begin
-                    result = {31'b0, 1'b1};
-                end else begin
-                    result = 32'b0;
-                end
+				
+				// NOR
+            4'b1100: begin
+                result = ~A | ~B;
                 overflow = 1'b0;
             end
 
@@ -82,12 +64,7 @@ module MIPS_ULA (
     // Lógica de saída
     always @(*) begin
         O = overflow;
-        if (overflow == 1'b0) begin
-            R = result;
-        end 
-		  else begin
-            R = 32'b0;
-        end
+        R = result;
 
         if ((A - B) == 32'b0) begin
             Z = 1'b1;

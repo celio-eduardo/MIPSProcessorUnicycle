@@ -61,15 +61,15 @@ applicable agreement for further details.
 	(port
 		(pt 192 96)
 		(output)
-		(text "LeMem" (rect 0 0 31 12)(font "Arial" ))
-		(text "LeMem" (rect 140 91 171 103)(font "Arial" ))
+		(text "EscreveMem" (rect 0 0 56 12)(font "Arial" ))
+		(text "EscreveMem" (rect 115 91 171 103)(font "Arial" ))
 		(line (pt 192 96)(pt 176 96)(line_width 1))
 	)
 	(port
 		(pt 192 112)
 		(output)
-		(text "EscreveMem" (rect 0 0 56 12)(font "Arial" ))
-		(text "EscreveMem" (rect 115 107 171 119)(font "Arial" ))
+		(text "Jump" (rect 0 0 22 12)(font "Arial" ))
+		(text "Jump" (rect 149 107 171 119)(font "Arial" ))
 		(line (pt 192 112)(pt 176 112)(line_width 1))
 	)
 	(port
