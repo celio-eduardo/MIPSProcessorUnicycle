@@ -3,7 +3,6 @@ module PCReg(
     input [31:0] next_PC,   // Próximo valor do PC
     output reg [31:0] PC    // Valor atual do PC
 );
-
     // Inicialização do PC (ex: 0x00400000 para o MARS MIPS)
     initial begin
         PC = 32'h00400000;

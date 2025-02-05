@@ -6,7 +6,9 @@ module Controladora  (
 	 output reg EscreveReg,
 	 output reg EscreveMem,
 	 output reg Jump,
+	 output reg Jal,
 	 output reg Branch,
+	 output reg BNE,
 	 output reg [1:0]OpULA
 );
 
@@ -20,7 +22,9 @@ module Controladora  (
 					 EscreveReg = 1;
 					 EscreveMem = 0;
 					 Branch = 0;
+					 BNE = 0;
 					 Jump = 0;
+					 Jal = 0;
 					 OpULA = 2'b10;
             end 
 			// Tipo I's
@@ -32,7 +36,9 @@ module Controladora  (
 					 EscreveReg = 1;
 					 EscreveMem = 0;
 					 Branch = 0;
+					 BNE = 0;
 					 Jump = 0;
+					 Jal = 0;
 					 OpULA = 2'b10;
 			end
 			// Tipo LW
@@ -43,7 +49,9 @@ module Controladora  (
 					 EscreveReg = 1;
 					 EscreveMem = 0;
 					 Branch = 0;
+					 BNE = 0;
 					 Jump = 0;
+					 Jal = 0;
 					 OpULA = 2'b00;
             end
 			// Tipo SW
@@ -54,7 +62,9 @@ module Controladora  (
 					 EscreveReg = 0;
 					 EscreveMem = 1;
 					 Branch = 0;
+					 BNE = 0;
 					 Jump = 0;
+					 Jal = 0;
 					 OpULA = 2'b00;
             end
 			// Tipo Branch
@@ -65,7 +75,21 @@ module Controladora  (
 					 EscreveReg = 0;
 					 EscreveMem = 0;
 					 Branch = 1;
+					 BNE = 0;
 					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 2'b01;
+            end
+			6'b000101: begin
+                OrigUla = 0;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 0;
+					 EscreveMem = 0;
+					 Branch = 1;
+					 BNE = 1;
+					 Jump = 0;
+					 Jal = 0;
 					 OpULA = 2'b01;
             end
 			// Tipo J
@@ -76,7 +100,22 @@ module Controladora  (
 					 EscreveReg = 0;
 					 EscreveMem = 0;
 					 Branch = 0;
+					 BNE = 0;
 					 Jump = 1;
+					 Jal = 0;
+					 OpULA = 2'b00;
+				end
+			// JAL
+			6'b000011: begin
+					 OrigUla = 0;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 1;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 1;
+					 Jal = 1;
 					 OpULA = 2'b00;
 			end
 		 endcase

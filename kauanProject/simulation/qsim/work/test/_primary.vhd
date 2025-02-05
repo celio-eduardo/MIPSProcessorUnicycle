@@ -11,7 +11,6 @@ entity test is
         INSTRUCAO       : out    vl_logic_vector(31 downto 0);
         IROUTPUT        : out    vl_logic_vector(31 downto 0);
         PC              : out    vl_logic_vector(31 downto 0);
-        PCJUMP          : out    vl_logic_vector(31 downto 0);
         ULAA            : out    vl_logic_vector(31 downto 0);
         ULAB            : out    vl_logic_vector(31 downto 0);
         ULAOPCODE       : out    vl_logic_vector(3 downto 0);

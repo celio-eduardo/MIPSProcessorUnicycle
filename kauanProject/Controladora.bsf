@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 208 192)
+	(rect 16 16 208 224)
 	(text "Controladora" (rect 5 0 55 12)(font "Arial" ))
-	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -75,18 +75,32 @@ applicable agreement for further details.
 	(port
 		(pt 192 128)
 		(output)
-		(text "Branch" (rect 0 0 28 12)(font "Arial" ))
-		(text "Branch" (rect 143 123 171 135)(font "Arial" ))
+		(text "Jal" (rect 0 0 10 12)(font "Arial" ))
+		(text "Jal" (rect 161 123 171 135)(font "Arial" ))
 		(line (pt 192 128)(pt 176 128)(line_width 1))
 	)
 	(port
 		(pt 192 144)
 		(output)
+		(text "Branch" (rect 0 0 28 12)(font "Arial" ))
+		(text "Branch" (rect 143 139 171 151)(font "Arial" ))
+		(line (pt 192 144)(pt 176 144)(line_width 1))
+	)
+	(port
+		(pt 192 160)
+		(output)
+		(text "BNE" (rect 0 0 20 12)(font "Arial" ))
+		(text "BNE" (rect 151 155 171 167)(font "Arial" ))
+		(line (pt 192 160)(pt 176 160)(line_width 1))
+	)
+	(port
+		(pt 192 176)
+		(output)
 		(text "OpULA[1..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "OpULA[1..0]" (rect 120 139 171 151)(font "Arial" ))
-		(line (pt 192 144)(pt 176 144)(line_width 3))
+		(text "OpULA[1..0]" (rect 120 171 171 183)(font "Arial" ))
+		(line (pt 192 176)(pt 176 176)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 176 160)(line_width 1))
+		(rectangle (rect 16 16 176 192)(line_width 1))
 	)
 )
