@@ -2,6 +2,7 @@
 *.qpf
 *.qsf
 *.qws
+*.temp
 db
 incremental_db
 output_files
