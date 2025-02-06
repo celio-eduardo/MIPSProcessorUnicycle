@@ -2,20 +2,20 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module test
+# -- Compiling module main
 # 
 # Top level modules:
-# 	test
+# 	main
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module test_vlg_sample_tst
-# -- Compiling module test_vlg_check_tst
-# -- Compiling module test_vlg_vec_tst
+# -- Compiling module main_vlg_sample_tst
+# -- Compiling module main_vlg_check_tst
+# -- Compiling module main_vlg_vec_tst
 # 
 # Top level modules:
-# 	test_vlg_vec_tst
-# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.test_vlg_vec_tst 
-# Loading work.test_vlg_vec_tst
-# Loading work.test
+# 	main_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.main_vlg_vec_tst 
+# Loading work.main_vlg_vec_tst
+# Loading work.main
 # Loading cycloneii_ver.cycloneii_ram_block
 # Loading cycloneii_ver.cycloneii_ram_register
 # Loading cycloneii_ver.cycloneii_ram_pulse_generator
@@ -29,21 +29,21 @@
 # Loading cycloneii_ver.cycloneii_clkctrl
 # Loading cycloneii_ver.cycloneii_mux41
 # Loading cycloneii_ver.cycloneii_ena_reg
-# Loading work.test_vlg_sample_tst
-# Loading work.test_vlg_check_tst
+# Loading work.main_vlg_sample_tst
+# Loading work.main_vlg_check_tst
 # SDF 10.1d Compiler 2012.11 Nov  2 2012
 # 
 # Loading instances from OACLE2_v.sdo
-# ** Warning: (vsim-3017) OACLE2.vt(3764): [TFMPC] - Too few port connections. Expected 13, found 9.
+# ** Warning: (vsim-3017) OACLE2.vt(7309): [TFMPC] - Too few port connections. Expected 20, found 16.
 # 
-#         Region: /test_vlg_vec_tst/i1
-# ** Warning: (vsim-3722) OACLE2.vt(3764): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+#         Region: /main_vlg_vec_tst/i1
+# ** Warning: (vsim-3722) OACLE2.vt(7309): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(3764): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) OACLE2.vt(7309): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(3764): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) OACLE2.vt(7309): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(3764): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) OACLE2.vt(7309): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
 # 
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
 # ** Warning: Design size of 4 instances exceeds ModelSim ALTERA recommended capacity.
@@ -51,7 +51,7 @@
 # the ModelSim Altera version. Expect performance to be adversely affected.
 # Loading timing data from OACLE2_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /test_vlg_vec_tst File: OACLE2.vt
+#    Time: 0 ps  Iteration: 0  Instance: /main_vlg_vec_tst File: OACLE2.vt
 # Simulation passed !
-# ** Note: $finish    : OACLE2.vt(3732)
-#    Time: 1 us  Iteration: 0  Instance: /test_vlg_vec_tst/tb_out
+# ** Note: $finish    : OACLE2.vt(7263)
+#    Time: 1 us  Iteration: 0  Instance: /main_vlg_vec_tst/tb_out

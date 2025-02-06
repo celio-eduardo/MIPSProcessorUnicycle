@@ -33,22 +33,20 @@
 
 module DataRam (
 	address,
+	clock,
 	data,
-	inclock,
-	outclock,
 	wren,
 	q);
 
 	input	[13:0]  address;
+	input	  clock;
 	input	[31:0]  data;
-	input	  inclock;
-	input	  outclock;
 	input	  wren;
 	output	[31:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri1	  inclock;
+	tri1	  clock;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
@@ -85,7 +83,7 @@ endmodule
 // Retrieval info: PRIVATE: RegData NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: SingleClock NUMERIC "0"
+// Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "1"
 // Retrieval info: PRIVATE: WRCONTROL_ACLR_A NUMERIC "0"
 // Retrieval info: PRIVATE: WidthAddr NUMERIC "14"
@@ -96,24 +94,23 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: INIT_FILE STRING "DATA.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
+// Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "16384"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
-// Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK1"
+// Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "14"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "32"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: USED_PORT: address 0 0 14 0 INPUT NODEFVAL "address[13..0]"
+// Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: data 0 0 32 0 INPUT NODEFVAL "data[31..0]"
-// Retrieval info: USED_PORT: inclock 0 0 0 0 INPUT VCC "inclock"
-// Retrieval info: USED_PORT: outclock 0 0 0 0 INPUT NODEFVAL "outclock"
 // Retrieval info: USED_PORT: q 0 0 32 0 OUTPUT NODEFVAL "q[31..0]"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT NODEFVAL "wren"
 // Retrieval info: CONNECT: @address_a 0 0 14 0 address 0 0 14 0
-// Retrieval info: CONNECT: @clock0 0 0 0 0 inclock 0 0 0 0
-// Retrieval info: CONNECT: @clock1 0 0 0 0 outclock 0 0 0 0
+// Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 32 0 data 0 0 32 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 32 0 @q_a 0 0 32 0
