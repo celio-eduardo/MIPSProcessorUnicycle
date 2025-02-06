@@ -1,0 +1,118 @@
+Instrução SUBU
+
+module control_unit(
+    input [5:0] opcode,
+    output reg RegDst,       // Destination register select
+    output reg ALUSrc,       // ALU source select
+    output reg MemRead,      // Memory read enable
+    output reg MemWrite,     // Memory write enable
+    output reg RegWrite,      // Register write enable
+    output reg [3:0] ALU_control // ALU operation select
+);
+
+    always @(*) begin
+        // Default values
+        RegDst = 0;
+        ALUSrc = 0;
+        MemRead = 0;
+        MemWrite = 0;
+        RegWrite = 0;
+        ALU_control = 4'b0000; // Default to NO OP
+
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                case (funct) // Check funct field for specific R-type instructions
+                    6'b100011: begin // subu
+                        RegDst = 1; // Destination is rd
+                        RegWrite = 1; // Write to register
+                        ALU_control = 4'b0110; // ALU operation for subtraction
+                    end
+                    // Add other R-type instructions here
+                endcase
+            end
+            // Handle other opcodes (lw, sw, etc.)
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+module alu(
+    input [31:0] A,
+    input [31:0] B,
+    input [3:0] ALU_control,
+    output reg [31:0] result,
+    output reg zero
+);
+    always @(*) begin
+        case (ALU_control)
+            4'b0010: result = A + B; // ADD
+            4'b0110: result = A - B; // SUB (for subu)
+            // Other ALU operations
+            default: result = 0;
+        endcase
+        zero = (result == 0);
+    end
+endmodule
+
+module mips_processor (
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    reg [31:0] registers [0:31]; // Register file
+    reg [31:0] memory [0:1023]; // Data memory
+    wire [31:0] instruction; // Current instruction
+    wire [31:0] ALU_result; // Result from ALU
+    wire [5:0] opcode; // Opcode of the instruction
+    wire [4:0] rs, rt, rd; // Source and destination registers
+    wire [15:0] immediate; // Immediate value
+    wire [5:0] funct; // Function code for R-type instructions
+
+    // Fetch instruction from memory
+    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+    assign opcode = instruction[31:26];
+    assign rs = instruction[25:21];
+    assign rt = instruction[20:16];
+    assign rd = instruction[15:11];
+    assign funct = instruction[5:0];
+
+    // ALU operation
+    wire [3:0] ALU_control;
+    control_unit control (
+        .opcode(opcode),
+        .funct(funct),
+        .RegDst(RegDst),
+        .ALUSrc(ALUSrc),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .RegWrite(RegWrite),
+        .ALU_control(ALU_control)
+    );
+
+    alu alu_unit (
+        .A(registers[rs]),
+        .B(registers[rt]),
+        .ALU_control(ALU_control),
+        .result(ALU_result)
+    );
+
+    // Memory operations and PC update logic
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            // Execute instruction based on opcode
+            case (opcode)
+                6'b000000: // R-type instructions
+                    case (funct)
+                        6'b100011: registers[rd] <= ALU_result; // subu
+                        // Handle other R-type instructions
+                    endcase
+                // Handle other opcodes (lw, sw, etc.)
+            endcase
+            PC <= PC + 4; // Increment PC
+        end
+    end
+endmodule

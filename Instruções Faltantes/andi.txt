@@ -1,0 +1,108 @@
+Instrução ANDI
+
+module control_unit(
+    input [5:0] opcode,
+    output reg RegDst,       // Destination register select
+    output reg ALUSrc,       // ALU source select
+    output reg MemRead,      // Memory read enable
+    output reg MemWrite,     // Memory write enable
+    output reg RegWrite,      // Register write enable
+    output reg [1:0] ALUOp   // ALU operation select
+);
+
+    always @(*) begin
+        // Default values
+        RegDst = 0;
+        ALUSrc = 0;
+        MemRead = 0;
+        MemWrite = 0;
+        RegWrite = 0;
+        ALUOp = 2'b00;
+
+        case (opcode)
+            6'b001100: begin // andi
+                ALUSrc = 1; // Use immediate value
+                RegWrite = 1; // Write to register
+                ALUOp = 2'b00; // ALU operation for AND
+            end
+            // ... outros opcodes
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+module alu(
+    input [31:0] A,
+    input [31:0] B,
+    input [1:0] ALUOp,
+    output reg [31:0] result,
+    output reg zero
+);
+    always @(*) begin
+        case (ALUOp)
+            2'b00: result = A & B; // AND operation
+            // ... outras operações
+            default: result = 0;
+        endcase
+        zero = (result == 0);
+    end
+endmodule
+
+module mips_processor (
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    reg [31:0] registers [0:31]; // Register file
+    reg [31:0] memory [0:1023]; // Data memory
+    wire [31:0] instruction; // Current instruction
+    wire [31:0] ALU_result; // Result from ALU
+    wire [5:0] opcode; // Opcode of the instruction
+    wire [4:0] rs; // Source register
+    wire [4:0] rt; // Target register
+    wire [15:0] immediate; // Immediate value
+
+    // Fetch instruction from memory
+    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+    assign opcode = instruction[31:26];
+    assign rs = instruction[25:21];
+    assign rt = instruction[20:16];
+    assign immediate = instruction[15:0];
+
+    // Control Unit
+    wire RegDst, ALUSrc, RegWrite;
+    wire [1:0] ALUOp;
+    control_unit control (
+        .opcode(opcode),
+        .RegDst(RegDst),
+        .ALUSrc(ALUSrc),
+        .RegWrite(RegWrite),
+        .ALUOp(ALUOp)
+    );
+
+    // ALU operation
+    wire [31:0] ALU_input_B;
+    assign ALU_input_B = ALUSrc ? {16'b0, immediate} : registers[rt]; // Use immediate or register value
+
+    alu alu_unit (
+        .A(registers[rs]),
+        .B(ALU_input_B),
+        .ALUOp(ALUOp),
+        .result(ALU_result)
+    );
+
+    // Write back to register
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            if (RegWrite) begin
+                registers[rt] <= ALU_result; // Write result to target register
+            end
+            PC <= PC + 4; // Increment PC
+        end
+    end
+endmodule
+

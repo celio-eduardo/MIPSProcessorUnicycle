@@ -1,0 +1,104 @@
+Intrução JUMP Alterações que precisamos fazer
+
+module control_unit(
+    input [5:0] opcode,      // Opcode from the instruction
+    input [5:0] funct,       // Function code for R-type instructions
+    output reg RegDst,       // Destination register select
+    output reg ALUSrc,       // ALU source select
+    output reg MemRead,      // Memory read enable
+    output reg MemWrite,     // Memory write enable
+    output reg RegWrite,     // Register write enable
+    output reg Branch,       // Branch control
+    output reg Jump,         // Jump control
+    output reg JR,           // Jump Register control
+    output reg [1:0] ALUOp   // ALU operation select
+);
+
+    always @(*) begin
+        // Default values
+        RegDst = 0;
+        ALUSrc = 0;
+        MemRead = 0;
+        MemWrite = 0;
+        RegWrite = 0;
+        Branch = 0;
+        Jump = 0;
+        JR = 0; // Initialize JR control signal
+        ALUOp = 2'b00;
+
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                case (funct)
+                    6'b001000: begin // jr
+                        JR = 1; // Enable jump register
+                        RegWrite = 0; // No register write
+                    end
+                    // Other R-type instructions...
+                endcase
+            end
+            // Other opcodes...
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+module MIPS_Processor (
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    reg [31:0] registers [0:31]; // Register file
+    wire [31:0] instruction; // Current instruction
+    wire [31:0] ALU_result; // Result from ALU
+    wire [31:0] read_data; // Data read from memory
+    wire [5:0] opcode; // Opcode of the instruction
+    wire [5:0] funct; // Function code for R-type instructions
+    wire [4:0] rs; // Source register
+    wire [4:0] rt; // Target register
+    wire [4:0] rd; // Destination register
+    wire [15:0] immediate; // Immediate value
+    wire [25:0] address; // Jump address
+    wire JR; // Jump Register control signal
+
+    // Fetch instruction from memory
+    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+    assign opcode = instruction[31:26];
+    assign funct = instruction[5:0];
+    assign rs = instruction[25:21];
+    assign rt = instruction[20:16];
+    assign rd = instruction[15:11];
+    assign immediate = instruction[15:0];
+    assign address = instruction[25:0];
+
+    // Control Unit
+    control_unit control (
+        .opcode(opcode),
+        .funct(funct),
+        .RegDst(RegDst),
+        .ALUSrc(ALUSrc),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .RegWrite(RegWrite),
+        .Branch(Branch),
+        .Jump(Jump),
+        .JR(JR),
+        .ALUOp(ALUOp)
+    );
+
+    // PC Update Logic
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            if (JR) begin
+                PC <= registers[rs]; // Jump to address in rs
+            end else begin
+                PC <= PC + 4; // Increment PC for next instruction
+            end
+        end
+    end
+
+    // Other datapath components...
+endmodule
