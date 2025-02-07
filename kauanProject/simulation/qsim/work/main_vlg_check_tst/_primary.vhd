@@ -6,6 +6,8 @@ entity main_vlg_check_tst is
         Clock           : in     vl_logic;
         INSTRUCAO       : in     vl_logic_vector(31 downto 0);
         IROUTPUT        : in     vl_logic_vector(31 downto 0);
+        JR              : in     vl_logic;
+        Jump            : in     vl_logic;
         PC              : in     vl_logic_vector(31 downto 0);
         ra              : in     vl_logic_vector(31 downto 0);
         t0              : in     vl_logic_vector(31 downto 0);

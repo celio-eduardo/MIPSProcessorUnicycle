@@ -9,6 +9,8 @@ entity main is
         Clock           : out    vl_logic;
         MiniCLOCK       : in     vl_logic;
         UnknownOpcode   : out    vl_logic;
+        Jump            : out    vl_logic;
+        JR              : out    vl_logic;
         at              : out    vl_logic_vector(31 downto 0);
         INSTRUCAO       : out    vl_logic_vector(31 downto 0);
         IROUTPUT        : out    vl_logic_vector(31 downto 0);
