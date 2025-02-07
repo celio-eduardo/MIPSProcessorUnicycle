@@ -1,0 +1,120 @@
+Instrução ADDU
+
+module control_unit(
+    input [5:0] opcode,      // Opcode from the instruction
+    input [5:0] funct,       // Function code for R-type instructions
+    output reg RegDst,       // Destination register select
+    output reg ALUSrc,       // ALU source select
+    output reg MemRead,      // Memory read enable
+    output reg MemWrite,     // Memory write enable
+    output reg RegWrite,      // Register write enable
+    output reg Branch,       // Branch control
+    output reg Jump,         // Jump control
+    output reg [1:0] ALUOp   // ALU operation select
+);
+
+    always @(*) begin
+        // Default values
+        RegDst = 0;
+        ALUSrc = 0;
+        MemRead = 0;
+        MemWrite = 0;
+        RegWrite = 0;
+        Branch = 0;
+        Jump = 0;
+        ALUOp = 2'b00;
+
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                RegDst = 1; // Destination is rd
+                RegWrite = 1; // Write to register
+                case (funct)
+                    6'b100001: ALUOp = 2'b10; // ADDU
+                    // Add other R-type function codes here
+                endcase
+            end
+            // Handle other opcodes (lw, sw, etc.)
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+
+module alu(
+    input [31:0] A,
+    input [31:0] B,
+    input [1:0] ALUOp,
+    output reg [31:0] result,
+    output reg zero
+);
+    always @(*) begin
+        case (ALUOp)
+            2'b10: result = A + B; // ADDU
+            // Add other ALU operations here
+            default: result = 0;
+        endcase
+        zero = (result == 0);
+    end
+endmodule
+
+module register_file(
+    input clk,
+    input reg_write,
+    input [4:0] read_reg1,
+    input [4:0] read_reg2,
+    input [4:0] write_reg,
+    input [31:0] write_data,
+    output reg [31:0] read_data1,
+    output reg [31:0] read_data2
+);
+    reg [31:0] reg_array [0:31]; // 32 registers
+
+    always @(posedge clk) begin
+        if (reg_write) begin
+            reg_array[write_reg] <= write_data; // Write data to register
+        end
+    end
+
+    always @(*) begin
+        read_data1 = reg_array[read_reg1]; // Read data from register 1
+        read_data2 = reg_array[read_reg2]; // Read data from register 2
+    end
+endmodule
+
+module mips_processor(
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    wire [31:0] instruction; // Current instruction
+    wire [31:0] ALU_result; // Result from ALU
+    wire [31:0] read_data1, read_data2; // Data read from registers
+    wire [4:0] rs, rt, rd; // Source and destination registers
+    wire [5:0] funct; // Function code
+    wire RegDst, ALUSrc, MemRead, MemWrite, RegWrite;
+    wire [1:0] ALUOp;
+
+    // Instantiate modules
+    instruction_memory instr_mem(.address(PC), .instruction(instruction));
+    control_unit ctrl_unit(.opcode(instruction[31:26]), .funct(instruction[5:0]), 
+                            .RegDst(RegDst), .ALUSrc(ALUSrc), .MemRead(MemRead), 
+                            .MemWrite(MemWrite), .RegWrite(RegWrite), 
+                            .ALUOp(ALUOp));
+    register_file reg_file(.clk(clk), .reg_write(RegWrite), 
+                            .read_reg1(instruction[25:21]), 
+                            .read_reg2(instruction[20:16]), 
+                            .write_reg(RegDst ? instruction[15:11] : instruction[20:16]), 
+                            .write_data(ALU_result), 
+                            .read_data1(read_data1), .read_data2(read_data2));
+    alu alu_unit(.A(read_data1), .B(read_data2), .ALUOp(ALUOp), .result(ALU_result));
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            PC <= PC + 4; // Increment PC
+        end
+    end
+endmodule

@@ -1,0 +1,183 @@
+XORI e SLL
+
+1. Implementação da Instrução xori
+Modificações na Unidade de Controle
+Adicione um caso para o opcode da instrução xori (001110).
+
+    module control_unit(
+        input [5:0] opcode,
+        output reg RegDst,       // Seleção do registrador de destino
+        output reg ALUSrc,       // Seleção da fonte da ALU
+        output reg MemRead,      // Habilita leitura da memória
+        output reg MemWrite,     // Habilita escrita na memória
+        output reg RegWrite,      // Habilita escrita no registrador
+        output reg [1:0] ALUOp   // Seleção da operação da ALU
+    );
+
+        always @(*) begin
+            // Valores padrão
+            RegDst = 0;
+            ALUSrc = 0;
+            MemRead = 0;
+            MemWrite = 0;
+            RegWrite = 0;
+            ALUOp = 2'b00;
+
+            case (opcode)
+                6'b001110: begin // xori
+                    ALUSrc = 1; // Usa o valor imediato
+                    RegWrite = 1; // Escreve no registrador
+                    ALUOp = 2'b10; // Operação da ALU para XOR
+                end
+                // ... outros opcodes
+                default: begin
+                    // Lidar com opcodes desconhecidos
+                end
+            endcase
+        end
+    endmodule
+
+
+Modificações na ALU
+A ALU deve ser capaz de realizar a operação XOR.
+
+    module alu(
+        input [31:0] A,
+        input [31:0] B,
+        input [1:0] ALUOp,
+        output reg [31:0] result,
+        output reg zero
+    );
+        always @(*) begin
+            case (ALUOp)
+                2'b00: result = A + B; // ADD
+                2'b01: result = A ^ B; // XOR (para xori)
+                // ... outras operações
+                default: result = 0;
+            endcase
+            zero = (result == 0);
+        end
+    endmodule
+
+
+Modificações no Módulo Principal do Processador
+No módulo principal, implemente a lógica para a execução da instrução xori.
+
+    module mips_processor (
+        input clk,
+        input reset
+    );
+        reg [31:0] PC; // Contador de Programa
+        reg [31:0] registers [0:31]; // Arquivo de registradores
+        reg [31:0] memory [0:1023]; // Memória de dados
+        wire [31:0] instruction; // Instrução atual
+        wire [31:0] ALU_result; // Resultado da ALU
+        wire [5:0] opcode; // Opcode da instrução
+        wire [4:0] rs, rt, rd; // Registradores fonte e destino
+        wire [15:0] immediate; // Valor imediato
+
+        // Busca a instrução da memória
+        assign instruction = memory[PC[31:2]]; // Supondo memória alinhada a palavras
+        assign opcode = instruction[31:26];
+        assign rs = instruction[25:21];
+        assign rt = instruction[20:16];
+        assign immediate = instruction[15:0];
+
+        // Unidade de Controle
+        wire RegDst, ALUSrc, RegWrite;
+        wire [1:0] ALUOp;
+        control_unit control (
+            .opcode(opcode),
+            .RegDst(RegDst),
+            .ALUSrc(ALUSrc),
+            .RegWrite(RegWrite),
+            .ALUOp(ALUOp)
+        );
+
+        // Operação da ALU
+        wire [31:0] ALU_input_B;
+        assign ALU_input_B = ALUSrc ? {16'b0, immediate} : registers[rt]; // Usa imediato ou valor do registrador
+        alu alu_unit (
+            .A(registers[rs]),
+            .B(ALU_input_B),
+            .ALUOp(ALUOp),
+            .result(ALU_result)
+        );
+
+        // Lógica de operações de memória e atualização do PC
+        always @(posedge clk or posedge reset) begin
+            if (reset) begin
+                PC <= 0; // Reset PC
+            end else begin
+                if (RegWrite) begin
+                    registers[rt] <= ALU_result; // Escreve o resultado no registrador de destino
+                end
+                PC <= PC + 4; // Incrementa o PC
+            end
+        end
+    endmodule
+
+
+2. Implementação da Instrução sll (Shift Left Logical)
+Modificações na Unidade de Controle
+Adicione um caso para o opcode da instrução sll (R-type com funct 000000).
+
+    always @(*) begin
+        // ... outros casos
+        case (opcode)
+            6'b000000: begin // R-type
+                case (funct)
+                    6'b000000: begin // sll
+                        RegDst = 1; // O destino é rd
+                        RegWrite = 1; // Habilita a escrita no registrador
+                        ALUOp = 2'b01; // Operação de shift
+                    end
+                    // ... outros R-types
+                endcase
+            end
+            // ... outros opcodes
+        endcase
+    end
+
+
+Modificações na ALU
+A ALU deve ser capaz de realizar a operação de shift à esquerda.
+
+    module alu(
+        input [31:0] A,
+        input [31:0] B,
+        input [1:0] ALUOp,
+        output reg [31:0] result,
+        output reg zero
+    );
+        always @(*) begin
+            case (ALUOp)
+                2'b00: result = A + B; // ADD
+                2'b01: result = A << B; // SLL (Shift Left Logical)
+                // ... outras operações
+                default: result = 0;
+            endcase
+            zero = (result == 0);
+        end
+    endmodule
+
+
+Modificações no Módulo Principal do Processador
+No módulo principal, implemente a lógica para a execução da instrução sll.
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            case (opcode)
+                6'b000000: begin // R-type instructions
+                    case (funct)
+                        6'b000000: registers[rd] <= ALU_result; // sll
+                        // ... outros R-types
+                    endcase
+                end
+                // ... outros opcodes
+            endcase
+            PC <= PC + 4; // Incrementa o PC
+        end
+    end

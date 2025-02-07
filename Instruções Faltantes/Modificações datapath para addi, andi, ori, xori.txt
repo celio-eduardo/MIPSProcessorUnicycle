@@ -1,0 +1,17 @@
+Modifcações para as intruções: ADDI, ANDI, ORI, XORI
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        PC <= 0; // Reset PC
+    end else begin
+        case (opcode)
+            6'b001000: registers[rt] <= registers[rs] + {{16{immediate[15]}}, immediate}; // addi
+            6'b001100: registers[rt] <= registers[rs] & {16'b0, immediate}; // andi
+            6'b001101: registers[rt] <= registers[rs] | {16'b0, immediate}; // ori
+            6'b001110: registers[rt] <= registers[rs] ^ {16'b0, immediate}; // xori
+            // ... outras instruções
+        endcase
+        PC <= PC + 4; // Incrementa o PC
+    end
+end
+

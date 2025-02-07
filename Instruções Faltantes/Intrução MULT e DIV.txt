@@ -1,0 +1,164 @@
+Intrução MULT e DIV
+
+unidade de controle:
+	always @(*) begin
+	    // ... outros casos
+	    case (opcode)
+	        6'b000000: begin // R-type
+	            case (funct)
+	                6'b011000: begin // mult
+	                    RegWrite = 0; // No register write
+	                    ALUOp = 2'b11; // Custom ALU operation for multiplication
+	                end
+	                // ... outros R-types
+	            endcase
+	        end
+	        // ... outros opcodes
+	    endcase
+	end
+
+Datapath
+	always @(posedge clk) begin
+	    if (opcode == 6'b000000 && funct == 6'b011000) begin // mult
+	        {HI, LO} <= registers[rs] * registers[rt]; // Store result in HI and LO
+	    end
+	end
+
+	always @(*) begin
+	    // ... outros casos
+	    case (opcode)
+	        6'b000000: begin // R-type
+	            case (funct)
+	                6'b011010: begin // div
+	                    RegWrite = 0; // No register write
+	                    ALUOp = 2'b11; // Custom ALU operation for division
+	                end
+	                // ... outros R-types
+	            endcase
+	        end
+	        // ... outros opcodes
+	    endcase
+	end
+
+unidade de controle:
+	always @(posedge clk) begin
+	    if (opcode == 6'b000000 && funct == 6'b011010) begin // div
+	        HI <= registers[rs] % registers[rt]; // Store remainder in HI
+	        LO <= registers[rs] / registers[rt]; // Store quotient in LO
+	    end
+	end
+
+	always @(*) begin
+	    // ... outros casos
+	    case (opcode)
+	        6'b000000: begin // R-type
+	            case (funct)
+	                6'b000000: begin // mfhi
+	                    RegWrite = 1; // Write to register
+	                    ALUOp = 2'b00; // No ALU operation needed
+	                end
+	                6'b000001: begin // mflo
+	                    RegWrite = 1; // Write to register
+	                    ALUOp = 2'b00; // No ALU operation needed
+	                end
+	                // ... outros R-types
+	            endcase
+	        end
+	        // ... outros opcodes
+	    endcase
+	end
+
+Datapath
+	always @(posedge clk) begin
+	    if (opcode == 6'b000000 && funct == 6'b000000) begin // mfhi
+	        registers[rd] <= HI; // Move from HI to destination register
+	    end else if (opcode == 6'b000000 && funct == 6'b000001) begin // mflo
+	        registers[rd] <= LO; // Move from LO to destination register
+	    end
+	end
+
+Unidade de controle:
+	always @(*) begin
+	    // ... outros casos
+	    case (opcode)
+	        6'b000000: begin // R-type
+	            case (funct)
+	                6'b000000: begin // mfhi
+	                    RegWrite = 1; // Write to register
+	                    ALUOp = 2'b00; // No ALU operation needed
+	                end
+	                6'b000001: begin // mflo
+	                    RegWrite = 1; // Write to register
+	                    ALUOp = 2'b00; // No ALU operation needed
+	                end
+	                // ... outros R-types
+	            endcase
+	        end
+	        // ... outros opcodes
+	    endcase
+	end
+
+Datapath:
+	always @(posedge clk) begin
+    if (opcode == 6'b000000 && funct == 6'b000000) begin // mfhi
+        registers[rd] <= HI; // Move from HI to destination register
+    end else if (opcode == 6'b000000 && funct == 6'b000001) begin // mflo
+        registers[rd] <= LO; // Move from LO to destination register
+    end
+end
+
+Integração final no módulo do processador:
+	module mips_processor (
+	    input clk,
+	    input reset
+	);
+	    reg [31:0] PC; // Program Counter
+	    reg [31:0] registers [0:31]; // Register file
+	    reg [31:0] memory [0:1023]; // Data memory
+	    reg [31:0] HI, LO; // HI and LO registers for multiplication and division
+	    wire [31:0] instruction; // Current instruction
+	    wire [5:0] opcode; // Opcode of the instruction
+	    wire [4:0] rs, rt, rd; // Source and destination registers
+	    wire [5:0] funct; // Function code for R-type instructions
+
+	    // Fetch instruction from memory
+	    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+	    assign opcode = instruction[31:26];
+	    assign rs = instruction[25:21];
+	    assign rt = instruction[20:16];
+	    assign rd = instruction[15:11];
+	    assign funct = instruction[5:0];
+
+	    // Control Unit
+	    wire RegWrite;
+	    wire [1:0] ALUOp;
+	    control_unit control (
+	        .opcode(opcode),
+	        .funct(funct),
+	        .RegWrite(RegWrite),
+	        .ALUOp(ALUOp)
+	    );
+
+	    // ALU operation
+	    always @(posedge clk) begin
+	        if (opcode == 6'b000000 && funct == 6'b011000) begin // mult
+	            {HI, LO} <= registers[rs] * registers[rt]; // Store result in HI and LO
+	        end else if (opcode == 6'b000000 && funct == 6'b011010) begin // div
+	            HI <= registers[rs] % registers[rt]; // Store remainder in HI
+	            LO <= registers[rs] / registers[rt]; // Store quotient in LO
+	        end else if (opcode == 6'b000000 && funct == 6'b000000) begin // mfhi
+	            registers[rd] <= HI; // Move from HI to destination register
+	        end else if (opcode == 6'b000000 && funct == 6'b000001) begin // mflo
+	            registers[rd] <= LO; // Move from LO to destination register
+	        end
+	    end
+
+	    // Memory operations and PC update logic
+	    always @(posedge clk or posedge reset) begin
+	        if (reset) begin
+	            PC <= 0; // Reset PC
+	        end else begin
+	            PC <= PC + 4; // Increment PC
+	        end
+	    end
+	endmodule
