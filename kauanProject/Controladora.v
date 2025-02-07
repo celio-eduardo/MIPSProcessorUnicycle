@@ -9,7 +9,8 @@ module Controladora  (
 	 output reg Jal,
 	 output reg Branch,
 	 output reg BNE,
-	 output reg [1:0]OpULA
+	 output reg [2:0]OpULA,
+	 output reg UnknownOpcode
 );
 
     // Controle da ULA
@@ -25,11 +26,12 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b10;
+					 OpULA = 3'b000;
+					 UnknownOpcode = 0;
             end 
 			// Tipo I's
-			6'b001000, 6'b001100, 6'b001101, 6'b001110:
-			begin
+			// Lui
+			6'b001111: begin
 					 OrigUla = 1;
 					 RegDst = 0;
 					 MemparaReg = 0;
@@ -39,8 +41,68 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b10;
+					 OpULA = 3'b001;
+					 UnknownOpcode = 0;
 			end
+			// Addi
+			6'b001000: begin
+					 OrigUla = 1;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 1;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 3'b100;
+					 UnknownOpcode = 0;
+			end
+			// Andi
+			6'b001100: begin
+					 OrigUla = 1;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 1;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 3'b101;
+					 UnknownOpcode = 0;
+			end
+			
+			// Ori
+			6'b001101: begin
+					 OrigUla = 1;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 1;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 3'b110;
+					 UnknownOpcode = 0;
+			end
+			
+			// Xori
+			6'b001110: begin
+					 OrigUla = 1;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 1;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 3'b111;
+					 UnknownOpcode = 0;
+			end
+			
 			// Tipo LW
 			6'b100011: begin
                 OrigUla = 1;
@@ -52,7 +114,8 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b00;
+					 OpULA = 3'b100;
+					 UnknownOpcode = 0;
             end
 			// Tipo SW
 			6'b101011: begin
@@ -65,7 +128,8 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b00;
+					 OpULA = 3'b100;
+					 UnknownOpcode = 0;
             end
 			// Tipo Branch
 			6'b000100: begin
@@ -78,8 +142,10 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b01;
+					 OpULA = 3'b010;
+					 UnknownOpcode = 0;
             end
+			// BNE
 			6'b000101: begin
                 OrigUla = 0;
 					 RegDst = 0;
@@ -90,7 +156,8 @@ module Controladora  (
 					 BNE = 1;
 					 Jump = 0;
 					 Jal = 0;
-					 OpULA = 2'b01;
+					 OpULA = 3'b010;
+					 UnknownOpcode = 0;
             end
 			// Tipo J
 			6'b000010: begin
@@ -103,7 +170,8 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 1;
 					 Jal = 0;
-					 OpULA = 2'b00;
+					 OpULA = 3'b000;
+					 UnknownOpcode = 0;
 				end
 			// JAL
 			6'b000011: begin
@@ -116,7 +184,22 @@ module Controladora  (
 					 BNE = 0;
 					 Jump = 1;
 					 Jal = 1;
-					 OpULA = 2'b00;
+					 OpULA = 3'b000;
+					 UnknownOpcode = 0;
+			end
+			// UNKNOWN OPCODE
+			default: begin
+					 OrigUla = 0;
+					 RegDst = 0;
+					 MemparaReg = 0;
+					 EscreveReg = 0;
+					 EscreveMem = 0;
+					 Branch = 0;
+					 BNE = 0;
+					 Jump = 0;
+					 Jal = 0;
+					 OpULA = 3'b000;
+					 UnknownOpcode = 1;
 			end
 		 endcase
     end
