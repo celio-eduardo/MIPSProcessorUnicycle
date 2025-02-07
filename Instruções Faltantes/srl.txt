@@ -1,0 +1,121 @@
+Instrução SRL
+
+module control_unit(
+    input [5:0] opcode,
+    input [5:0] funct,
+    output reg RegDst,       // Destination register select
+    output reg ALUSrc,       // ALU source select
+    output reg MemRead,      // Memory read enable
+    output reg MemWrite,     // Memory write enable
+    output reg RegWrite,      // Register write enable
+    output reg [1:0] ALUOp   // ALU operation select
+);
+
+    always @(*) begin
+        // Default values
+        RegDst = 0;
+        ALUSrc = 0;
+        MemRead = 0;
+        MemWrite = 0;
+        RegWrite = 0;
+        ALUOp = 2'b00;
+
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                RegDst = 1; // Destination is rd
+                RegWrite = 1; // Write to register
+                case (funct)
+                    6'b000010: ALUOp = 2'b01; // SRL
+                    // Add other R-type function codes here
+                endcase
+            end
+            // Handle other opcodes (lw, sw, etc.)
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+module alu(
+    input [31:0] A,
+    input [31:0] B,
+    input [1:0] ALUOp,
+    output reg [31:0] result,
+    output reg zero
+);
+    always @(*) begin
+        case (ALUOp)
+            2'b00: result = A + B; // ADD
+            2'b01: result = A >> B; // SRL (Shift Right Logical)
+            // Other ALU operations
+            default: result = 0;
+        endcase
+        zero = (result == 0);
+    end
+endmodule
+
+module mips_processor (
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    reg [31:0] registers [0:31]; // Register file
+    reg [31:0] memory [0:1023]; // Data memory
+    wire [31:0] instruction; // Current instruction
+    wire [31:0] ALU_result; // Result from ALU
+    wire [5:0] opcode; // Opcode of the instruction
+    wire [4:0] rs, rt, rd; // Source and destination registers
+    wire [4:0] shamt; // Shift amount
+    wire [5:0] funct; // Function code for R-type instructions
+
+    // Fetch instruction from memory
+    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+    assign opcode = instruction[31:26];
+    assign rs = instruction[25:21];
+    assign rt = instruction[20:16];
+    assign rd = instruction[15:11];
+    assign shamt = instruction[10:6];
+    assign funct = instruction[5:0];
+
+    // Control Unit
+    wire RegDst, ALUSrc, MemRead, MemWrite, RegWrite;
+    wire [1:0] ALUOp;
+    control_unit control (
+        .opcode(opcode),
+        .funct(funct),
+        .RegDst(RegDst),
+        .ALUSrc(ALUSrc),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .RegWrite(RegWrite),
+        .ALUOp(ALUOp)
+    );
+
+    // ALU operation
+    alu alu_unit (
+        .A(registers[rt]), // Use rt as the source for the shift
+        .B(shamt), // Shift amount
+        .ALUOp(ALUOp),
+        .result(ALU_result)
+    );
+
+    // Memory operations and PC update logic
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            case (opcode)
+                6'b000000: begin // R-type instructions
+                    case (funct)
+                        6'b000010: registers[rd] <= ALU_result; // srl
+                        // Handle other R-type instructions
+                    endcase
+                end
+                // Handle other opcodes (lw, sw, etc.)
+            endcase
+            PC <= PC + 4; // Increment PC
+        end
+    end
+endmodule
+

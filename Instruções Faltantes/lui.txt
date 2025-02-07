@@ -1,0 +1,89 @@
+Intrução LUI - Alterações
+
+module control_unit(
+    input [5:0] opcode,
+    output reg reg_write,
+    output reg [1:0] reg_dst,
+    output reg [3:0] alu_control,
+    output reg mem_read,
+    output reg mem_write,
+    output reg alu_src
+);
+    always @(*) begin
+        // Default values
+        reg_write = 0;
+        mem_read = 0;
+        mem_write = 0;
+        alu_src = 0;
+        reg_dst = 2'b00; // Default destination
+
+        case (opcode)
+            6'b001111: begin // LUI
+                reg_write = 1; // Enable register write
+                alu_src = 0; // No ALU operation needed
+                reg_dst = 2'b01; // Destination is rt
+            end
+            // Other opcodes...
+            default: begin
+                // Handle unknown opcodes
+            end
+        endcase
+    end
+endmodule
+
+module register_file(
+    input clk,
+    input reg_write,
+    input [4:0] read_reg1,
+    input [4:0] read_reg2,
+    input [4:0] write_reg,
+    input [31:0] write_data,
+    output reg [31:0] read_data1,
+    output reg [31:0] read_data2
+);
+    reg [31:0] reg_array [0:31]; // 32 registers
+
+    always @(posedge clk) begin
+        if (reg_write) begin
+            reg_array[write_reg] <= write_data; // Write data to register
+        end
+    end
+
+    always @(*) begin
+        read_data1 = reg_array[read_reg1]; // Read data from register 1
+        read_data2 = reg_array[read_reg2]; // Read data from register 2
+    end
+endmodule
+
+module MIPS_Processor (
+    input clk,
+    input reset
+);
+    reg [31:0] PC; // Program Counter
+    reg [31:0] registers [0:31]; // Register file
+    reg [31:0] memory [0:1023]; // Data memory
+    wire [31:0] instruction; // Current instruction
+    wire [5:0] opcode; // Opcode of the instruction
+    wire [4:0] rt; // Target register
+    wire [15:0] immediate; // Immediate value
+
+    // Fetch instruction from memory
+    assign instruction = memory[PC[31:2]]; // Assuming word-aligned memory
+    assign opcode = instruction[31:26];
+    assign rt = instruction[20:16];
+    assign immediate = instruction[15:0];
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            PC <= 0; // Reset PC
+        end else begin
+            case (opcode)
+                6'b001111: begin // LUI
+                    registers[rt] <= {immediate, 16'b0}; // Load upper immediate
+                end
+                // Other instructions...
+            endcase
+            PC <= PC + 4; // Increment PC
+        end
+    end
+endmodule
