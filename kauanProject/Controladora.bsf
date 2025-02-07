@@ -33,9 +33,9 @@ applicable agreement for further details.
 	(port
 		(pt 200 32)
 		(output)
-		(text "OrigUla" (rect 0 0 29 12)(font "Arial" ))
-		(text "OrigUla" (rect 150 27 179 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32)(line_width 1))
+		(text "OrigUla[1..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "OrigUla[1..0]" (rect 131 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
 		(pt 200 48)

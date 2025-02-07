@@ -1,8 +1,10 @@
 module ULA (
     input wire clk,          // Clock adicionado
+	 input wire Unsigned,
     input wire [3:0] ULAopcode,
     input wire [31:0] A,
     input wire [31:0] B,
+	 input wire [4:0] shamt,
     output reg [31:0] R,
     output reg Z,
     output reg O
@@ -49,6 +51,18 @@ module ULA (
             4'b0010: begin
                 result = A + B;
                 overflow = ((A[31] ~^ B[31]) & (A[31] ^ result[31]));
+            end
+				
+				// Sll
+            4'b0011: begin
+                result = B << shamt;
+                overflow = 1'b0;
+            end
+				
+				// Slr
+            4'b0100: begin
+                result = B >> shamt;
+                overflow = 1'b0;
             end
 
             // Sub
@@ -100,9 +114,9 @@ module ULA (
             end
         endcase
 
-        O = overflow;
-        R = result;
-        Z = (result == 32'b0); // Z baseado no resultado
+        O = overflow & ~Unsigned;
+		  R = result;
+		  Z = (result == 32'b0); // Z baseado no resultado
     end
 
 endmodule

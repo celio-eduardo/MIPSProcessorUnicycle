@@ -1,6 +1,6 @@
 module Controladora  (
     input wire [5:0] Op,
-	 output reg OrigUla,
+	 output reg [1:0] OrigUla,
 	 output reg RegDst,
 	 output reg MemparaReg,
 	 output reg EscreveReg,
@@ -60,7 +60,7 @@ module Controladora  (
 			end
 			// Andi
 			6'b001100: begin
-					 OrigUla = 1;
+					 OrigUla = 2'b10;
 					 RegDst = 0;
 					 MemparaReg = 0;
 					 EscreveReg = 1;
@@ -75,7 +75,7 @@ module Controladora  (
 			
 			// Ori
 			6'b001101: begin
-					 OrigUla = 1;
+					 OrigUla = 2'b10;
 					 RegDst = 0;
 					 MemparaReg = 0;
 					 EscreveReg = 1;
@@ -90,7 +90,7 @@ module Controladora  (
 			
 			// Xori
 			6'b001110: begin
-					 OrigUla = 1;
+					 OrigUla = 2'b10;
 					 RegDst = 0;
 					 MemparaReg = 0;
 					 EscreveReg = 1;
