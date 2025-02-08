@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 0 0 216 144)
+	(rect 0 0 216 128)
 	(text "DataRam" (rect 74 0 137 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 128 25 140)(font "Arial" ))
+	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -47,16 +47,9 @@ applicable agreement for further details.
 	(port
 		(pt 0 112)
 		(input)
-		(text "inclock" (rect 0 0 38 14)(font "Arial" (font_size 8)))
-		(text "inclock" (rect 4 96 43 111)(font "Arial" (font_size 8)))
-		(line (pt 0 112)(pt 80 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "outclock" (rect 0 0 47 14)(font "Arial" (font_size 8)))
-		(text "outclock" (rect 4 112 51 127)(font "Arial" (font_size 8)))
-		(line (pt 0 128)(pt 144 128))
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 4 96 33 111)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 144 112))
 	)
 	(port
 		(pt 216 32)
@@ -68,7 +61,7 @@ applicable agreement for further details.
 	(drawing
 		(text "32 bits" (rect 106 29 198 170)(font "Arial" )(vertical))
 		(text "16384 words" (rect 120 16 230 206)(font "Arial" )(vertical))
-		(text "Block type: AUTO" (rect 48 127 186 268)(font "Arial" ))
+		(text "Block type: AUTO" (rect 48 111 186 236)(font "Arial" ))
 		(line (pt 104 24)(pt 136 24))
 		(line (pt 136 24)(pt 136 96))
 		(line (pt 136 96)(pt 104 96))
@@ -108,11 +101,11 @@ applicable agreement for further details.
 		(line (pt 80 68)(pt 88 68))
 		(line (pt 96 64)(pt 104 64)(line_width 3))
 		(line (pt 80 112)(pt 80 36))
-		(line (pt 144 128)(pt 144 36))
+		(line (pt 144 112)(pt 144 36))
 		(line (pt 0 0)(pt 217 0))
-		(line (pt 217 0)(pt 217 146))
-		(line (pt 0 146)(pt 217 146))
-		(line (pt 0 0)(pt 0 146))
+		(line (pt 217 0)(pt 217 130))
+		(line (pt 0 130)(pt 217 130))
+		(line (pt 0 0)(pt 0 130))
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
