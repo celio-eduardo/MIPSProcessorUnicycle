@@ -1,0 +1,9 @@
+module JumpEndereco(
+    input [25:0] target_26bits,  // IR J
+    input [31:0] pc_pp,      // PC + 4
+    output [31:0] jump_endereco
+);
+
+    assign jump_address = {pc_pp[31:28], target_26bits, 2'b00};
+
+endmodule

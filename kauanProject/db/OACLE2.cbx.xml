@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="OACLE2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_74d1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|ULA:inst6|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_28m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|DataRam:inst2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m5c1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|ULA:inst6|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_vfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|ULA:inst6|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

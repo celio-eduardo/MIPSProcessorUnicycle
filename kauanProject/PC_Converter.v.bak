@@ -1,0 +1,8 @@
+module PC_Converter(
+    input [31:0] PC,        // Endereço original (ex: 0x00400000)
+    output [11:0] converted  // Endereço convertido (ex: 000, 001)
+);
+
+    assign converted = PC[13:2]; // Resultado em 8 bits (ex: 8'h00, 8'h01)
+
+endmodule
