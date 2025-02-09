@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD>
+<TITLE>Multiplexer Restructuring Statistics (Restructuring Performed)</TITLE>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.layout-latest.css">
+<link rel="stylesheet" type="text/css" href="css/override.css">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+
+
+</HEAD>
+
+<BODY>
+<TABLE>
+<thead><TR  bgcolor="#BFBFBF">
+<TH>Multiplexer Inputs</TH>
+<TH>Bus Width</TH>
+<TH>Baseline Area</TH>
+<TH>Area if Restructured</TH>
+<TH>Saving if Restructured</TH>
+<TH>Registered</TH>
+<TH>Example Multiplexer Output</TH>
+</TR>
+</thead><tbody><TR >
+<TD >3:1</TD>
+<TD >2 bits</TD>
+<TD >4 LEs</TD>
+<TD >2 LEs</TD>
+<TD >2 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|PCReg:inst24|PC[0]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >6 bits</TD>
+<TD >12 LEs</TD>
+<TD >6 LEs</TD>
+<TD >6 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[4]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >32 bits</TD>
+<TD >64 LEs</TD>
+<TD >32 LEs</TD>
+<TD >32 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[26]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >12 bits</TD>
+<TD >24 LEs</TD>
+<TD >12 LEs</TD>
+<TD >12 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[9]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >4:1</TD>
+<TD >4 bits</TD>
+<TD >8 LEs</TD>
+<TD >8 LEs</TD>
+<TD >0 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|PCReg:inst24|PC[29]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >4:1</TD>
+<TD >25 bits</TD>
+<TD >50 LEs</TD>
+<TD >50 LEs</TD>
+<TD >0 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|PCReg:inst24|PC[23]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >64 bits</TD>
+<TD >128 LEs</TD>
+<TD >64 LEs</TD>
+<TD >64 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|ULA:inst6|HI[0]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >5:1</TD>
+<TD >5 bits</TD>
+<TD >15 LEs</TD>
+<TD >5 LEs</TD>
+<TD >10 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >24:1</TD>
+<TD >4 bits</TD>
+<TD >64 LEs</TD>
+<TD >32 LEs</TD>
+<TD >32 LEs</TD>
+<TD >Yes</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >5 bits</TD>
+<TD >10 LEs</TD>
+<TD >10 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|mux_2to1Reg:inst18|out[1]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >4:1</TD>
+<TD >15 bits</TD>
+<TD >30 LEs</TD>
+<TD >30 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|mux_3to1:inst25|Mux25</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >3:1</TD>
+<TD >16 bits</TD>
+<TD >32 LEs</TD>
+<TD >32 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|mux_3to1:inst25|Mux1</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >7:1</TD>
+<TD >6 bits</TD>
+<TD >24 LEs</TD>
+<TD >24 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|Controle_ULA:inst5|Mux10</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >33:1</TD>
+<TD >32 bits</TD>
+<TD >704 LEs</TD>
+<TD >704 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|BancoReg:inst4|data1[30]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >33:1</TD>
+<TD >32 bits</TD>
+<TD >704 LEs</TD>
+<TD >704 LEs</TD>
+<TD >0 LEs</TD>
+<TD >No</TD>
+<TD >|main|BancoReg:inst4|data2[27]</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >19:1</TD>
+<TD >8 bits</TD>
+<TD >96 LEs</TD>
+<TD >72 LEs</TD>
+<TD >24 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux17</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >19:1</TD>
+<TD >8 bits</TD>
+<TD >96 LEs</TD>
+<TD >72 LEs</TD>
+<TD >24 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux8</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >20:1</TD>
+<TD >4 bits</TD>
+<TD >52 LEs</TD>
+<TD >36 LEs</TD>
+<TD >16 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux24</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >20:1</TD>
+<TD >4 bits</TD>
+<TD >52 LEs</TD>
+<TD >40 LEs</TD>
+<TD >12 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux4</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >21:1</TD>
+<TD >2 bits</TD>
+<TD >28 LEs</TD>
+<TD >20 LEs</TD>
+<TD >8 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux28</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >21:1</TD>
+<TD >2 bits</TD>
+<TD >28 LEs</TD>
+<TD >20 LEs</TD>
+<TD >8 LEs</TD>
+<TD >No</TD>
+<TD >|main|ULA:inst6|Mux3</TD>
+</TR>
+</tbody></TABLE>
+
+<noscript>JavaScript must be enabled to view the report.</noscript>
+</BODY>
+</HTML>
