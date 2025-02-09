@@ -1,0 +1,18 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 216afff6;  % 4: addi $t2, $t3, -10 %
+00000001 : 016b5020;  % 5: add $t2, $t3, $t3 %
+00000002 : 316a00ff;  % 7: andi $t2, $t3, 0xFF %
+00000003 : 016b5020;  % 8: add $t2, $t3, $t3 %
+00000004 : 356a00ff;  % 10: ori  $t2, $t3, 0xFF %
+00000005 : 016b5020;  % 11: add $t2, $t3, $t3 %
+00000006 : 396a00ff;  % 13: xori $t2, $t3, 0xFF %
+00000007 : 016b5020;  % 14: add $t2, $t3, $t3 %
+00000008 : 08100008;  % 17 j exit %
+
+END;

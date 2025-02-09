@@ -1,0 +1,14 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 240a0002;  % 4: li $t2, 2 %
+00000001 : 014b482a;  % 5: slt $t1, $t2, $t3 %
+00000002 : 240b0003;  % 8: li $t3, 3 %
+00000003 : 014b602a;  % 9: slt $t4, $t2, $t3 %
+00000004 : 08100004;  % 12: j exit %
+
+END;

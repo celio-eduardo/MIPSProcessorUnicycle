@@ -1,0 +1,14 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 0c100002;  % 4: jal jump_label %
+00000001 : 08100004;  % 5: j end %
+00000002 : 3c091234;  % 8: lui $t1, 0x1234 %
+00000003 : 03e00008;  % 9: jr $ra %
+00000004 : 08100004;  % 12: j end %
+
+END;
