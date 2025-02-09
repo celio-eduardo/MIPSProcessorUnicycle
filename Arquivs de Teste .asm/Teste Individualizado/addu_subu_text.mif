@@ -1,0 +1,13 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 240affff; % li $t2, 0xFFFFFFFF %
+00000001 : 014b4821; % addu $t1, $t2, $t3 %
+00000001 : 014b4823; % subu $t1, $t2, $t3 %
+00000004 : 08100003; % j exit %
+
+END;

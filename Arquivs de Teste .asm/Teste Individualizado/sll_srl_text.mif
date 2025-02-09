@@ -1,0 +1,12 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 000b5280;  % 4: sll $t2, $t3, 10 %
+00000001 : 000b5282;  % 5: slr $t2, $t3, 10 %
+00000002 : 08100002;  % 8: j exit %
+
+END;

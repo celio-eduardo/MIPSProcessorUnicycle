@@ -1,0 +1,15 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 2409ffff;  % 3: li $t1, 10 %
+00000001 : 340affff;  % 4: li $t2, 3
+00000002 : 712a4002;  % 5: div $t1, $t2 %
+00000003 : 00005810;  % 6: mfhi $t3 %
+00000004 : 00006012;  % 7: mflo $t4 %
+00000005 : 08100005;  % 10: j exit %
+
+END;
