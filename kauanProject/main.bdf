@@ -295,6 +295,88 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 1064 768 1240 784)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "t2[31..0]" (rect 90 0 131 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1064 784 1240 800)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "t3[31..0]" (rect 90 0 131 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1064 800 1240 816)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "t4[31..0]" (rect 90 0 131 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1752 424 1768 600)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "RULA[31..0]" (rect 0 5 12 66)(font "Arial" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 1912 408 1928 632)
+	(text "OUTPUT" (rect 0 185 10 223)(font "Arial" (font_size 6))(vertical))
+	(text "CONVERTEDADDR[13..0]" (rect 0 5 12 138)(font "Arial" )(vertical))
+	(pt 8 224)
+	(drawing
+		(line (pt 8 224)(pt 8 172))
+		(line (pt 4 172)(pt 4 146))
+		(line (pt 12 172)(pt 12 146))
+		(line (pt 12 172)(pt 4 172))
+		(line (pt 4 146)(pt 8 142))
+		(line (pt 8 142)(pt 12 146))
+		(line (pt 12 146)(pt 8 142))
+	)
+	(rotate90)
+)
 (symbol
 	(rect 104 448 304 528)
 	(text "PC_Converter" (rect 5 0 75 12)(font "Arial" ))
@@ -1166,7 +1248,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1912 568 2128 696)
+	(rect 1920 568 2136 696)
 	(text "DataRam" (rect 74 0 137 16)(font "Arial" (font_size 10)))
 	(text "inst2" (rect 8 112 31 124)(font "Arial" ))
 	(port
@@ -1259,7 +1341,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -432 976 -272 1056)
+	(rect -432 968 -272 1048)
 	(text "div_freq" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst32" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -1489,77 +1571,77 @@ applicable agreement for further details.
 		(pt 200 32)
 		(output)
 		(text "OrigUla[1..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "OrigUla[1..0]" (rect 127 27 179 39)(font "Arial" ))
+		(text "OrigUla[1..0]" (rect 127 27 189 39)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
 		(pt 200 48)
 		(output)
 		(text "RegDst" (rect 0 0 37 12)(font "Arial" ))
-		(text "RegDst" (rect 148 43 179 55)(font "Arial" ))
+		(text "RegDst" (rect 148 43 185 55)(font "Arial" ))
 		(line (pt 200 48)(pt 184 48))
 	)
 	(port
 		(pt 200 64)
 		(output)
 		(text "MemparaReg" (rect 0 0 64 12)(font "Arial" ))
-		(text "MemparaReg" (rect 125 59 179 71)(font "Arial" ))
+		(text "MemparaReg" (rect 125 59 189 71)(font "Arial" ))
 		(line (pt 200 64)(pt 184 64))
 	)
 	(port
 		(pt 200 80)
 		(output)
 		(text "EscreveReg" (rect 0 0 61 12)(font "Arial" ))
-		(text "EscreveReg" (rect 128 75 179 87)(font "Arial" ))
+		(text "EscreveReg" (rect 128 75 189 87)(font "Arial" ))
 		(line (pt 200 80)(pt 184 80))
 	)
 	(port
 		(pt 200 96)
 		(output)
 		(text "EscreveMem" (rect 0 0 64 12)(font "Arial" ))
-		(text "EscreveMem" (rect 125 91 179 103)(font "Arial" ))
+		(text "EscreveMem" (rect 125 91 189 103)(font "Arial" ))
 		(line (pt 200 96)(pt 184 96))
 	)
 	(port
 		(pt 200 112)
 		(output)
 		(text "Jump" (rect 0 0 27 12)(font "Arial" ))
-		(text "Jump" (rect 157 107 179 119)(font "Arial" ))
+		(text "Jump" (rect 157 107 184 119)(font "Arial" ))
 		(line (pt 200 112)(pt 184 112))
 	)
 	(port
 		(pt 200 128)
 		(output)
 		(text "Jal" (rect 0 0 14 12)(font "Arial" ))
-		(text "Jal" (rect 168 123 179 135)(font "Arial" ))
+		(text "Jal" (rect 168 123 182 135)(font "Arial" ))
 		(line (pt 200 128)(pt 184 128))
 	)
 	(port
 		(pt 200 144)
 		(output)
 		(text "Branch" (rect 0 0 34 12)(font "Arial" ))
-		(text "Branch" (rect 151 139 179 151)(font "Arial" ))
+		(text "Branch" (rect 151 139 185 151)(font "Arial" ))
 		(line (pt 200 144)(pt 184 144))
 	)
 	(port
 		(pt 200 160)
 		(output)
 		(text "BNE" (rect 0 0 22 12)(font "Arial" ))
-		(text "BNE" (rect 161 155 179 167)(font "Arial" ))
+		(text "BNE" (rect 161 155 183 167)(font "Arial" ))
 		(line (pt 200 160)(pt 184 160))
 	)
 	(port
 		(pt 200 176)
 		(output)
 		(text "OpULA[2..0]" (rect 0 0 61 12)(font "Arial" ))
-		(text "OpULA[2..0]" (rect 128 171 179 183)(font "Arial" ))
+		(text "OpULA[2..0]" (rect 128 171 189 183)(font "Arial" ))
 		(line (pt 200 176)(pt 184 176)(line_width 3))
 	)
 	(port
 		(pt 200 192)
 		(output)
 		(text "UnknownOpcode" (rect 0 0 82 12)(font "Arial" ))
-		(text "UnknownOpcode" (rect 110 187 179 199)(font "Arial" ))
+		(text "UnknownOpcode" (rect 110 187 192 199)(font "Arial" ))
 		(line (pt 200 192)(pt 184 192))
 	)
 	(drawing
@@ -1588,21 +1670,21 @@ applicable agreement for further details.
 		(pt 224 32)
 		(output)
 		(text "ULAopcode[3..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "ULAopcode[3..0]" (rect 134 27 203 39)(font "Arial" ))
+		(text "ULAopcode[3..0]" (rect 134 27 216 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(port
 		(pt 224 48)
 		(output)
 		(text "Unsigned" (rect 0 0 46 12)(font "Arial" ))
-		(text "Unsigned" (rect 165 43 203 55)(font "Arial" ))
+		(text "Unsigned" (rect 165 43 211 55)(font "Arial" ))
 		(line (pt 224 48)(pt 208 48))
 	)
 	(port
 		(pt 224 64)
 		(output)
 		(text "Jr" (rect 0 0 9 12)(font "Arial" ))
-		(text "Jr" (rect 196 59 203 71)(font "Arial" ))
+		(text "Jr" (rect 196 59 205 71)(font "Arial" ))
 		(line (pt 224 64)(pt 208 64))
 	)
 	(drawing
@@ -1628,18 +1710,9 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 2128 600)
-	(pt 2184 600)
-	(bus)
-)
-(connector
 	(pt 2280 640)
 	(pt 2272 640)
 	(bus)
-)
-(connector
-	(pt 1896 616)
-	(pt 1912 616)
 )
 (connector
 	(pt 312 480)
@@ -1684,11 +1757,6 @@ applicable agreement for further details.
 (connector
 	(pt 776 440)
 	(pt 1016 440)
-)
-(connector
-	(pt 1912 600)
-	(pt 1904 600)
-	(bus)
 )
 (connector
 	(pt 616 480)
@@ -2023,14 +2091,6 @@ applicable agreement for further details.
 	(pt 296 1152)
 )
 (connector
-	(pt 1880 680)
-	(pt 1912 680)
-)
-(connector
-	(pt 1880 680)
-	(pt 1880 1152)
-)
-(connector
 	(pt 448 624)
 	(pt 448 912)
 )
@@ -2043,22 +2103,6 @@ applicable agreement for further details.
 	(pt 840 976)
 )
 (connector
-	(pt 40 976)
-	(pt 40 1008)
-)
-(connector
-	(pt 40 1008)
-	(pt -272 1008)
-)
-(connector
-	(pt -432 632)
-	(pt -432 816)
-)
-(connector
-	(pt -432 816)
-	(pt -432 1008)
-)
-(connector
 	(pt 1000 96)
 	(pt 1000 176)
 )
@@ -2069,10 +2113,6 @@ applicable agreement for further details.
 (connector
 	(pt 1016 440)
 	(pt 1016 208)
-)
-(connector
-	(pt 1896 616)
-	(pt 1896 224)
 )
 (connector
 	(pt 1392 88)
@@ -2200,16 +2240,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1792 608)
-	(pt 1792 616)
-	(bus)
-)
-(connector
-	(pt 1792 616)
-	(pt 1792 736)
-	(bus)
-)
-(connector
 	(pt 1048 152)
 	(pt 1376 152)
 )
@@ -2236,26 +2266,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1760 608)
-	(pt 1792 608)
-	(bus)
-)
-(connector
-	(pt 1760 608)
-	(pt 1760 664)
-	(bus)
-)
-(connector
 	(pt 1760 680)
 	(pt 1776 680)
 )
 (connector
 	(pt 1776 680)
 	(pt 1776 672)
-)
-(connector
-	(pt 1560 664)
-	(pt 1536 664)
 )
 (connector
 	(text "IR[25..0]" (rect 584 433 596 476)(font "Arial" )(vertical))
@@ -2347,17 +2363,9 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -272 1008)
-	(pt -272 600)
-)
-(connector
 	(pt 16 600)
 	(pt -48 600)
 	(bus)
-)
-(connector
-	(pt -272 600)
-	(pt -232 600)
 )
 (connector
 	(pt 16 -16)
@@ -2442,11 +2450,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1904 600)
-	(pt 1904 552)
-	(bus)
-)
-(connector
 	(pt 1904 552)
 	(pt 1248 552)
 	(bus)
@@ -2517,22 +2520,6 @@ applicable agreement for further details.
 (connector
 	(pt -592 616)
 	(pt -592 1432)
-)
-(connector
-	(pt 840 1416)
-	(pt 1536 1416)
-)
-(connector
-	(pt 1536 664)
-	(pt 1536 1416)
-)
-(connector
-	(pt 840 816)
-	(pt 840 976)
-)
-(connector
-	(pt 840 976)
-	(pt 840 1416)
 )
 (connector
 	(pt 744 1280)
@@ -2677,6 +2664,106 @@ applicable agreement for further details.
 	(pt 1288 1200)
 	(bus)
 )
+(connector
+	(pt 1792 600)
+	(pt 1760 600)
+	(bus)
+)
+(connector
+	(pt 1792 600)
+	(pt 1792 616)
+	(bus)
+)
+(connector
+	(pt 1792 616)
+	(pt 1792 736)
+	(bus)
+)
+(connector
+	(pt 1760 600)
+	(pt 1760 664)
+	(bus)
+)
+(connector
+	(pt 2184 600)
+	(pt 2136 600)
+	(bus)
+)
+(connector
+	(pt 1912 632)
+	(pt 1920 632)
+	(bus)
+)
+(connector
+	(pt 1896 224)
+	(pt 1896 616)
+)
+(connector
+	(pt 1904 552)
+	(pt 1904 600)
+	(bus)
+)
+(connector
+	(pt 1904 600)
+	(pt 1920 600)
+	(bus)
+)
+(connector
+	(pt 1896 616)
+	(pt 1920 616)
+)
+(connector
+	(pt 1880 680)
+	(pt 1920 680)
+)
+(connector
+	(pt 40 976)
+	(pt 40 1000)
+)
+(connector
+	(pt 40 1000)
+	(pt -272 1000)
+)
+(connector
+	(pt -272 600)
+	(pt -272 1000)
+)
+(connector
+	(pt -232 600)
+	(pt -272 600)
+)
+(connector
+	(pt -432 632)
+	(pt -432 816)
+)
+(connector
+	(pt -432 816)
+	(pt -432 1000)
+)
+(connector
+	(pt 1880 680)
+	(pt 1880 1152)
+)
+(connector
+	(pt 1528 664)
+	(pt 1560 664)
+)
+(connector
+	(pt 1528 664)
+	(pt 1528 1504)
+)
+(connector
+	(pt 1528 1504)
+	(pt 840 1504)
+)
+(connector
+	(pt 840 816)
+	(pt 840 976)
+)
+(connector
+	(pt 840 976)
+	(pt 840 1504)
+)
 (junction (pt 616 480))
 (junction (pt 584 480))
 (junction (pt 568 480))
@@ -2703,12 +2790,11 @@ applicable agreement for further details.
 (junction (pt 672 480))
 (junction (pt 1792 616))
 (junction (pt 1544 856))
-(junction (pt 840 976))
 (junction (pt 264 112))
 (junction (pt 416 1024))
-(junction (pt -272 1008))
 (junction (pt -272 368))
 (junction (pt -592 616))
 (junction (pt 568 1240))
 (junction (pt 744 1280))
 (junction (pt 1464 592))
+(junction (pt 840 976))

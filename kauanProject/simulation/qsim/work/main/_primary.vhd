@@ -13,12 +13,17 @@ entity main is
         JR              : out    vl_logic;
         OVERFLOW        : out    vl_logic;
         at              : out    vl_logic_vector(31 downto 0);
+        CONVERTEDADDR   : out    vl_logic_vector(13 downto 0);
         INSTRUCAO       : out    vl_logic_vector(31 downto 0);
         IROUTPUT        : out    vl_logic_vector(31 downto 0);
         PC              : out    vl_logic_vector(31 downto 0);
         ra              : out    vl_logic_vector(31 downto 0);
+        RULA            : out    vl_logic_vector(31 downto 0);
         t0              : out    vl_logic_vector(31 downto 0);
         t1              : out    vl_logic_vector(31 downto 0);
+        t2              : out    vl_logic_vector(31 downto 0);
+        t3              : out    vl_logic_vector(31 downto 0);
+        t4              : out    vl_logic_vector(31 downto 0);
         ULAA            : out    vl_logic_vector(31 downto 0);
         ULAB            : out    vl_logic_vector(31 downto 0);
         ULAOPCODE       : out    vl_logic_vector(3 downto 0);

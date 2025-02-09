@@ -90,13 +90,13 @@ module Controle_ULA  (
 						Unsigned = 1'b0;
 					end
 					// MFLO
-					6'b010000: begin
+					6'b010010: begin
 						ULAopcode = 4'b1010;
 						Jr = 1'b0;
 						Unsigned = 1'b0;
 					end
 					// MFHI
-					6'b010010: begin
+					6'b010000: begin
 						ULAopcode = 4'b1011;
 						Jr = 1'b0;
 						Unsigned = 1'b0;

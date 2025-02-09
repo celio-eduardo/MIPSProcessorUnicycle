@@ -33,7 +33,7 @@ module ULA (
     end
 
     // Lógica combinacional para operações
-    always @(*) begin
+    always @(A or B or ULAopcode or shamt or Unsigned) begin
         case (ULAopcode)
             // AND
             4'b0000: begin

@@ -1,0 +1,16 @@
+module div_freq( 
+		input mini_clock,
+		output clock
+);
+initial begin
+	integer i = 0;
+end
+always @(posedge mini_clock) begin
+	if (i == 1) begin
+		clock = 1'b1;
+	end
+	else begin
+		i = i + 1;
+	end
+end
+endmodule

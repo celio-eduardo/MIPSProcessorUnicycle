@@ -1,0 +1,7 @@
+module mux_2to1 ( input in,                 
+                  output out);         
+
+   always @ (*) begin
+      out <= ~in;
+   end
+endmodule
