@@ -39,16 +39,16 @@
 # SDF 10.1d Compiler 2012.11 Nov  2 2012
 # 
 # Loading instances from OACLE2_v.sdo
-# ** Warning: (vsim-3017) OACLE2.vt(6224): [TFMPC] - Too few port connections. Expected 21, found 17.
+# ** Warning: (vsim-3017) OACLE2.vt(8830): [TFMPC] - Too few port connections. Expected 26, found 22.
 # 
 #         Region: /main_vlg_vec_tst/i1
-# ** Warning: (vsim-3722) OACLE2.vt(6224): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# ** Warning: (vsim-3722) OACLE2.vt(8830): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(6224): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# ** Warning: (vsim-3722) OACLE2.vt(8830): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(6224): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# ** Warning: (vsim-3722) OACLE2.vt(8830): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
 # 
-# ** Warning: (vsim-3722) OACLE2.vt(6224): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# ** Warning: (vsim-3722) OACLE2.vt(8830): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
 # 
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
 # ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
@@ -73,6 +73,82 @@
 # Loading timing data from OACLE2_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /main_vlg_vec_tst File: OACLE2.vt
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(476): $setup( d:32872 ps, posedge clk &&& reset:32892 ps, 35 ps );
+#    Time: 32892 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a106 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:32922 ps, d:33027 ps, 234 ps );
+#    Time: 33027 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a111 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:32947 ps, d:33085 ps, 234 ps );
+#    Time: 33085 ps  Iteration: 1  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a112 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:112928 ps, d:113027 ps, 234 ps );
+#    Time: 113027 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a9 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:112909 ps, d:113043 ps, 234 ps );
+#    Time: 113043 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a7 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112919 ps, ena:113135 ps, 234 ps );
+#    Time: 113135 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a102 /datain_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112920 ps, ena:113136 ps, 234 ps );
+#    Time: 113136 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a102 /we_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112920 ps, ena:113136 ps, 234 ps );
+#    Time: 113136 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a102 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:112929 ps, d:113154 ps, 234 ps );
+#    Time: 113154 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a24 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:112939 ps, d:113160 ps, 234 ps );
+#    Time: 113160 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a107 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112963 ps, ena:113174 ps, 234 ps );
+#    Time: 113174 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a126 /datain_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112964 ps, ena:113175 ps, 234 ps );
+#    Time: 113175 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a126 /we_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(482): $hold( posedge clk &&& reset:112964 ps, ena:113175 ps, 234 ps );
+#    Time: 113175 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a126 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352930 ps, d:352932 ps, 234 ps );
+#    Time: 352932 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a12 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352924 ps, d:352935 ps, 234 ps );
+#    Time: 352935 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a17 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352929 ps, d:352941 ps, 234 ps );
+#    Time: 352941 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a24 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352948 ps, d:352968 ps, 234 ps );
+#    Time: 352968 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a21 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352909 ps, d:352998 ps, 234 ps );
+#    Time: 352998 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a7 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352957 ps, d:353032 ps, 234 ps );
+#    Time: 353032 ps  Iteration: 1  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a30 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352957 ps, d:353043 ps, 234 ps );
+#    Time: 353043 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a30 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352931 ps, d:353063 ps, 234 ps );
+#    Time: 353063 ps  Iteration: 1  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a11 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352959 ps, d:353071 ps, 234 ps );
+#    Time: 353071 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a18 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352893 ps, d:353091 ps, 234 ps );
+#    Time: 353091 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a8 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352931 ps, d:353094 ps, 234 ps );
+#    Time: 353094 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a11 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352957 ps, d:353117 ps, 234 ps );
+#    Time: 353117 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a30 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:352902 ps, d:353122 ps, 234 ps );
+#    Time: 353122 ps  Iteration: 1  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a6 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(476): $setup( d:432877 ps, posedge clk &&& reset:432893 ps, 35 ps );
+#    Time: 432893 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a13 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:432878 ps, d:432905 ps, 234 ps );
+#    Time: 432905 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a2 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:432925 ps, d:433051 ps, 234 ps );
+#    Time: 433051 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a16 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:432900 ps, d:433080 ps, 234 ps );
+#    Time: 433080 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a20 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:512936 ps, d:512939 ps, 234 ps );
+#    Time: 512939 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a15 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:512945 ps, d:512957 ps, 234 ps );
+#    Time: 512957 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a26 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:512941 ps, d:512963 ps, 234 ps );
+#    Time: 512963 ps  Iteration: 1  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a3 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:512956 ps, d:512980 ps, 234 ps );
+#    Time: 512980 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a19 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:592878 ps, d:592905 ps, 234 ps );
+#    Time: 592905 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a2 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:592959 ps, d:593020 ps, 234 ps );
+#    Time: 593020 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a18 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:592925 ps, d:593051 ps, 234 ps );
+#    Time: 593051 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a16 /addr_a_register
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneii_atoms.v(480): $hold( posedge clk &&& reset:592900 ps, d:593080 ps, 234 ps );
+#    Time: 593080 ps  Iteration: 0  Instance: /main_vlg_vec_tst/i1/\inst2|altsyncram_component|auto_generated|ram_block1a20 /addr_a_register
 # Simulation passed !
-# ** Note: $finish    : OACLE2.vt(6176)
+# ** Note: $finish    : OACLE2.vt(8772)
 #    Time: 1 us  Iteration: 0  Instance: /main_vlg_vec_tst/tb_out

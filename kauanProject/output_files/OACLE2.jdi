@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4446bff2697aae99b041"/>
+    <hash md5_digest_80b="842402905a5d20cc4445"/>
   </project>
   <file_info>
-    <file device="EP2C70F672C6" path="OACLE2.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP2C70F896C6" path="OACLE2.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info hub_ir_width="5" ir_width="5" node_addr_width="1" node_count="1"/>
   <node_info>

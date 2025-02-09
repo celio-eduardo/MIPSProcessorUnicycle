@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for OACLE2
-Sat Feb 08 06:23:29 2025
+Sun Feb 09 18:59:43 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 ; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
 ; Revision Name      ; OACLE2                                                            ;
 ; Device Family      ; Cyclone II                                                        ;
-; Device Name        ; EP2C70F672C6                                                      ;
+; Device Name        ; EP2C70F896C6                                                      ;
 ; Timing Models      ; Final                                                             ;
 ; Delay Model        ; Combined                                                          ;
 ; Rise/Fall Delays   ; Unavailable                                                       ;
@@ -218,18 +218,18 @@ No dedicated SERDES Transmitter circuitry present in device or used in design
 No dedicated SERDES Receiver circuitry present in device or used in design
 
 
-+-------------------------------------------------+
-; Unconstrained Paths                             ;
-+---------------------------------+-------+-------+
-; Property                        ; Setup ; Hold  ;
-+---------------------------------+-------+-------+
-; Illegal Clocks                  ; 0     ; 0     ;
-; Unconstrained Clocks            ; 3     ; 3     ;
-; Unconstrained Input Ports       ; 0     ; 0     ;
-; Unconstrained Input Port Paths  ; 0     ; 0     ;
-; Unconstrained Output Ports      ; 329   ; 329   ;
-; Unconstrained Output Port Paths ; 56143 ; 56143 ;
-+---------------------------------+-------+-------+
++---------------------------------------------------+
+; Unconstrained Paths                               ;
++---------------------------------+--------+--------+
+; Property                        ; Setup  ; Hold   ;
++---------------------------------+--------+--------+
+; Illegal Clocks                  ; 0      ; 0      ;
+; Unconstrained Clocks            ; 3      ; 3      ;
+; Unconstrained Input Ports       ; 0      ; 0      ;
+; Unconstrained Input Port Paths  ; 0      ; 0      ;
+; Unconstrained Output Ports      ; 471    ; 471    ;
+; Unconstrained Output Port Paths ; 121283 ; 121283 ;
++---------------------------------+--------+--------+
 
 
 +------------------------------------+
@@ -238,7 +238,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb 08 06:23:26 2025
+    Info: Processing started: Sun Feb 09 18:59:40 2025
 Info: Command: quartus_sta OACLE2 -c OACLE2
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -279,8 +279,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4681 megabytes
-    Info: Processing ended: Sat Feb 08 06:23:29 2025
+    Info: Peak virtual memory: 4689 megabytes
+    Info: Processing ended: Sun Feb 09 18:59:43 2025
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

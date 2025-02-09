@@ -1,5 +1,5 @@
 Flow report for OACLE2
-Sat Feb 08 06:23:35 2025
+Sun Feb 09 18:59:48 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,21 +40,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Feb 08 06:23:35 2025           ;
+; Flow Status                        ; Successful - Sun Feb 09 18:59:48 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; OACLE2                                          ;
 ; Top-level Entity Name              ; main                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 5,085 / 68,416 ( 7 % )                          ;
-;     Total combinational functions  ; 5,062 / 68,416 ( 7 % )                          ;
+; Total logic elements               ; 5,084 / 68,416 ( 7 % )                          ;
+;     Total combinational functions  ; 5,061 / 68,416 ( 7 % )                          ;
 ;     Dedicated logic registers      ; 1,302 / 68,416 ( 2 % )                          ;
 ; Total registers                    ; 1302                                            ;
-; Total pins                         ; 330 / 422 ( 78 % )                              ;
+; Total pins                         ; 472 / 622 ( 76 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 655,360 / 1,152,000 ( 57 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 8 / 300 ( 3 % )                                 ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-; Device                             ; EP2C70F672C6                                    ;
+; Device                             ; EP2C70F896C6                                    ;
 ; Timing Models                      ; Final                                           ;
 +------------------------------------+-------------------------------------------------+
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/08/2025 06:21:52 ;
+; Start date & time ; 02/09/2025 18:58:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; OACLE2              ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 255521435034622.173900651100172 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 255521435034622.173913833122276 ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                             ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
@@ -102,12 +102,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:24     ; 1.0                     ; 4697 MB             ; 00:00:18                           ;
-; Fitter                    ; 00:01:00     ; 1.0                     ; 5035 MB             ; 00:00:40                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4585 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4681 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4585 MB             ; 00:00:03                           ;
-; Total                     ; 00:01:37     ; --                      ; --                  ; 00:01:07                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4701 MB             ; 00:00:11                           ;
+; Fitter                    ; 00:00:29     ; 1.0                     ; 5041 MB             ; 00:00:28                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4596 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4689 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 4601 MB             ; 00:00:04                           ;
+; Total                     ; 00:00:51     ; --                      ; --                  ; 00:00:49                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

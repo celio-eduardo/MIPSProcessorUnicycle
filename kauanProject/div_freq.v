@@ -7,7 +7,7 @@ initial begin
 	i = 0;
 end
 always @(posedge mini_clock) begin
-	if (i == 2) begin
+	if (i == 3) begin
 		clock <= 1'b1;
 		i = 0;
 	end
