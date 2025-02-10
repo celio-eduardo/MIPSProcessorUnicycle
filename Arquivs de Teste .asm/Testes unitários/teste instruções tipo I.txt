@@ -1,0 +1,16 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 3C08FFFF; % 2: lui $t0, 0xffff %
+00000001 : 20090010; % 3: addi $t1, $zero, 16 %
+00000002 : 310AFFFF; % 4: andi $t2, $t0, 0xffff % 
+00000003 : 340BFFFF; % 5: ori $t3, $zero, 0xffff %
+00000004 : 394cFFFF; % 6: xori $t4, $t2, 0xffff %
+00000005 : 000B5880; % 7: sll $t3, $t3, 2 %
+00000006 : 000A50C2; % 8: srl $t2, $t2, 3 %
+
+END;

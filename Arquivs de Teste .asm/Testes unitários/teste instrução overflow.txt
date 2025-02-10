@@ -1,0 +1,14 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+
+00000000 : 3c017fff; % 2: li $t0. 0x7FFFFFFF
+00000001 : 3428ffff;
+00000002 : 20090001; % 3: addi $t1, $zero, 1
+00000003 : 01095021; % 4: addu $t2, $t0, $t1
+00000004 : 01095020; % 5: add $t2, $t0, $t1
+
+END;

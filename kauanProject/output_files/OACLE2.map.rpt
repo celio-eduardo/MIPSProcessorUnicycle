@@ -1,5 +1,5 @@
 Analysis & Synthesis report for OACLE2
-Sun Feb 09 18:59:03 2025
+Mon Feb 10 19:06:32 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -33,7 +33,6 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  25. In-System Memory Content Editor Settings
  26. Elapsed Time Per Partition
  27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,16 +58,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 09 18:59:03 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 10 19:06:32 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; OACLE2                                          ;
 ; Top-level Entity Name              ; main                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 6,080                                           ;
-;     Total combinational functions  ; 5,061                                           ;
-;     Dedicated logic registers      ; 1,302                                           ;
-; Total registers                    ; 1302                                            ;
-; Total pins                         ; 472                                             ;
+; Total logic elements               ; 6,036                                           ;
+;     Total combinational functions  ; 5,017                                           ;
+;     Dedicated logic registers      ; 1,272                                           ;
+; Total registers                    ; 1272                                            ;
+; Total pins                         ; 530                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 655,360                                         ;
 ; Embedded Multiplier 9-bit elements ; 8                                               ;
@@ -234,35 +233,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                         ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Estimated Total logic elements              ; 6,080                 ;
-;                                             ;                       ;
-; Total combinational functions               ; 5061                  ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 3206                  ;
-;     -- 3 input functions                    ; 1597                  ;
-;     -- <=2 input functions                  ; 258                   ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 3755                  ;
-;     -- arithmetic mode                      ; 1306                  ;
-;                                             ;                       ;
-; Total registers                             ; 1302                  ;
-;     -- Dedicated logic registers            ; 1302                  ;
-;     -- I/O registers                        ; 0                     ;
-;                                             ;                       ;
-; I/O pins                                    ; 472                   ;
-; Total memory bits                           ; 655360                ;
-; Embedded Multiplier 9-bit elements          ; 8                     ;
-; Maximum fan-out node                        ; div_freq:inst32|clock ;
-; Maximum fan-out                             ; 1121                  ;
-; Total fan-out                               ; 25459                 ;
-; Average fan-out                             ; 3.63                  ;
-+---------------------------------------------+-----------------------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 6,036                ;
+;                                             ;                      ;
+; Total combinational functions               ; 5017                 ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 3205                 ;
+;     -- 3 input functions                    ; 1583                 ;
+;     -- <=2 input functions                  ; 229                  ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 3742                 ;
+;     -- arithmetic mode                      ; 1275                 ;
+;                                             ;                      ;
+; Total registers                             ; 1272                 ;
+;     -- Dedicated logic registers            ; 1272                 ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 530                  ;
+; Total memory bits                           ; 655360               ;
+; Embedded Multiplier 9-bit elements          ; 8                    ;
+; Maximum fan-out node                        ; div_freq:inst32|i[2] ;
+; Maximum fan-out                             ; 1122                 ;
+; Total fan-out                               ; 25353                ;
+; Average fan-out                             ; 3.63                 ;
++---------------------------------------------+----------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,14 +269,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                    ; Library Name ;
 +---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                                               ; 5061 (14)         ; 1302 (0)     ; 655360      ; 8            ; 0       ; 4         ; 472  ; 0            ; |main                                                                                                                                                                  ; work         ;
-;    |BancoReg:inst4|                                                 ; 1403 (1403)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|BancoReg:inst4                                                                                                                                                   ; work         ;
-;    |Controladora:inst36|                                            ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Controladora:inst36                                                                                                                                              ; work         ;
-;    |Controle_ULA:inst5|                                             ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Controle_ULA:inst5                                                                                                                                               ; work         ;
-;    |DataRam:inst2|                                                  ; 72 (0)            ; 4 (0)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2                                                                                                                                                    ; work         ;
-;       |altsyncram:altsyncram_component|                             ; 72 (0)            ; 4 (0)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component                                                                                                                    ; work         ;
-;          |altsyncram_m5c1:auto_generated|                           ; 72 (0)            ; 4 (4)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated                                                                                     ; work         ;
-;             |decode_4oa:decode3|                                    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|decode_4oa:decode3                                                                  ; work         ;
+; |main                                                               ; 5017 (2)          ; 1272 (0)     ; 655360      ; 8            ; 0       ; 4         ; 530  ; 0            ; |main                                                                                                                                                                  ; work         ;
+;    |BancoReg:inst4|                                                 ; 1402 (1402)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|BancoReg:inst4                                                                                                                                                   ; work         ;
+;    |Controladora:inst36|                                            ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Controladora:inst36                                                                                                                                              ; work         ;
+;    |Controle_ULA:inst5|                                             ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|Controle_ULA:inst5                                                                                                                                               ; work         ;
+;    |DataRam:inst2|                                                  ; 71 (0)            ; 4 (0)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2                                                                                                                                                    ; work         ;
+;       |altsyncram:altsyncram_component|                             ; 71 (0)            ; 4 (0)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component                                                                                                                    ; work         ;
+;          |altsyncram_m5c1:auto_generated|                           ; 71 (0)            ; 4 (4)        ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated                                                                                     ; work         ;
+;             |decode_4oa:decode3|                                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|decode_4oa:decode3                                                                  ; work         ;
 ;             |decode_4oa:deep_decode|                                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|decode_4oa:deep_decode                                                              ; work         ;
 ;             |mux_1kb:mux2|                                          ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|mux_1kb:mux2                                                                        ; work         ;
 ;    |MemInstrucaoF:inst31|                                           ; 92 (0)            ; 65 (0)       ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|MemInstrucaoF:inst31                                                                                                                                             ; work         ;
@@ -291,26 +290,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |PCReg:inst24|                                                   ; 62 (62)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|PCReg:inst24                                                                                                                                                     ; work         ;
 ;    |PCpp:inst12|                                                    ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|PCpp:inst12                                                                                                                                                      ; work         ;
 ;       |ULA:inst|                                                    ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|PCpp:inst12|ULA:inst                                                                                                                                             ; work         ;
-;    |ULA:inst6|                                                      ; 3011 (790)        ; 64 (64)      ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|ULA:inst6                                                                                                                                                        ; work         ;
-;       |lpm_divide:Div0|                                             ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0                                                                                                                                        ; work         ;
-;          |lpm_divide_vfm:auto_generated|                            ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated                                                                                                          ; work         ;
-;             |sign_div_unsign_9nh:divider|                           ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider                                                                              ; work         ;
-;                |alt_u_div_k5f:divider|                              ; 1067 (1067)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                        ; work         ;
-;       |lpm_divide:Mod0|                                             ; 1075 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0                                                                                                                                        ; work         ;
-;          |lpm_divide_28m:auto_generated|                            ; 1075 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                                                                          ; work         ;
-;             |sign_div_unsign_9nh:divider|                           ; 1075 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                                                                              ; work         ;
-;                |alt_u_div_k5f:divider|                              ; 1075 (1074)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                        ; work         ;
+;    |ULA:inst6|                                                      ; 3020 (799)        ; 64 (64)      ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|ULA:inst6                                                                                                                                                        ; work         ;
+;       |lpm_divide:Div0|                                             ; 1066 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0                                                                                                                                        ; work         ;
+;          |lpm_divide_vfm:auto_generated|                            ; 1066 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated                                                                                                          ; work         ;
+;             |sign_div_unsign_9nh:divider|                           ; 1066 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider                                                                              ; work         ;
+;                |alt_u_div_k5f:divider|                              ; 1066 (1066)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                        ; work         ;
+;       |lpm_divide:Mod0|                                             ; 1076 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0                                                                                                                                        ; work         ;
+;          |lpm_divide_28m:auto_generated|                            ; 1076 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                                                                          ; work         ;
+;             |sign_div_unsign_9nh:divider|                           ; 1076 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                                                                              ; work         ;
+;                |alt_u_div_k5f:divider|                              ; 1076 (1075)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider                                                        ; work         ;
 ;                   |add_sub_mkc:add_sub_1|                           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1                                  ; work         ;
 ;       |lpm_mult:Mult0|                                              ; 79 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|ULA:inst6|lpm_mult:Mult0                                                                                                                                         ; work         ;
 ;          |mult_l8t:auto_generated|                                  ; 79 (79)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|ULA:inst6|lpm_mult:Mult0|mult_l8t:auto_generated                                                                                                                 ; work         ;
-;    |div_freq:inst32|                                                ; 44 (44)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|div_freq:inst32                                                                                                                                                  ; work         ;
+;    |div_freq:inst32|                                                ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|div_freq:inst32                                                                                                                                                  ; work         ;
 ;    |mux_2to1:inst1|                                                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_2to1:inst1                                                                                                                                                   ; work         ;
 ;    |mux_2to1:inst3|                                                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_2to1:inst3                                                                                                                                                   ; work         ;
 ;    |mux_2to1Reg:inst18|                                             ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_2to1Reg:inst18                                                                                                                                               ; work         ;
-;    |mux_3to1:inst25|                                                ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_3to1:inst25                                                                                                                                                  ; work         ;
-;    |sld_hub:auto_hub|                                               ; 113 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub                                                                                                                                                 ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                ; 112 (74)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                    ; work         ;
-;          |sld_rom_sr:hub_info_reg|                                  ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                            ; work         ;
+;    |mux_3to1:inst25|                                                ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_3to1:inst25                                                                                                                                                  ; work         ;
+;    |sld_hub:auto_hub|                                               ; 112 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub                                                                                                                                                 ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                ; 111 (74)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                    ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                  ; 20 (20)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                            ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                          ; work         ;
 +---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -359,12 +358,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------------+-------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
 +----------------------------------------------------+-------------------------+------------------------+
-; Controle_ULA:inst5|Jr                              ; Controle_ULA:inst5|Mux3 ; yes                    ;
-; Controle_ULA:inst5|Unsigned                        ; Controle_ULA:inst5|Mux3 ; yes                    ;
-; Controle_ULA:inst5|ULAopcode[0]                    ; Controle_ULA:inst5|Mux3 ; yes                    ;
-; Controle_ULA:inst5|ULAopcode[1]                    ; Controle_ULA:inst5|Mux3 ; yes                    ;
-; Controle_ULA:inst5|ULAopcode[3]                    ; Controle_ULA:inst5|Mux3 ; yes                    ;
-; Controle_ULA:inst5|ULAopcode[2]                    ; Controle_ULA:inst5|Mux3 ; yes                    ;
+; Controle_ULA:inst5|Unsigned                        ; Controle_ULA:inst5|Mux1 ; yes                    ;
+; Controle_ULA:inst5|ULAopcode[0]                    ; Controle_ULA:inst5|Mux1 ; yes                    ;
+; Controle_ULA:inst5|ULAopcode[1]                    ; Controle_ULA:inst5|Mux1 ; yes                    ;
+; Controle_ULA:inst5|ULAopcode[3]                    ; Controle_ULA:inst5|Mux1 ; yes                    ;
+; Controle_ULA:inst5|ULAopcode[2]                    ; Controle_ULA:inst5|Mux1 ; yes                    ;
+; Controle_ULA:inst5|Jr                              ; Controle_ULA:inst5|Mux1 ; yes                    ;
 ; Number of user-specified and inferred latches = 6  ;                         ;                        ;
 +----------------------------------------------------+-------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -388,7 +387,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1302  ;
+; Total registers                              ; 1272  ;
 ; Number of registers using Synchronous Clear  ; 17    ;
 ; Number of registers using Synchronous Load   ; 27    ;
 ; Number of registers using Asynchronous Clear ; 52    ;
@@ -416,26 +415,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|PCReg:inst24|PC[0]                                                                                                                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|PCReg:inst24|PC[1]                                                                                                                                                               ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[4]                                     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[26]                                               ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[9]                                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[30]                                               ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|PCReg:inst24|PC[29]                                                                                                                                                              ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |main|PCReg:inst24|PC[23]                                                                                                                                                              ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |main|ULA:inst6|HI[0]                                                                                                                                                                  ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
-; 24:1               ; 4 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main|mux_2to1Reg:inst18|out[1]                                                                                                                                                        ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |main|mux_3to1:inst25|Mux25                                                                                                                                                            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main|mux_3to1:inst25|Mux1                                                                                                                                                             ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |main|Controle_ULA:inst5|Mux10                                                                                                                                                         ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |main|BancoReg:inst4|data1[30]                                                                                                                                                         ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |main|BancoReg:inst4|data2[27]                                                                                                                                                         ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |main|ULA:inst6|Mux19                                                                                                                                                                  ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |main|ULA:inst6|Mux9                                                                                                                                                                   ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; No         ; |main|ULA:inst6|Mux24                                                                                                                                                                  ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |main|PCReg:inst24|PC[15]                                                                                                                                                              ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |main|ULA:inst6|LO[30]                                                                                                                                                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4] ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[3]      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main|mux_2to1Reg:inst18|out[0]                                                                                                                                                        ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |main|mux_3to1:inst25|Mux31                                                                                                                                                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main|mux_3to1:inst25|Mux11                                                                                                                                                            ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |main|Controle_ULA:inst5|Mux8                                                                                                                                                          ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |main|BancoReg:inst4|data1[12]                                                                                                                                                         ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |main|BancoReg:inst4|data2[31]                                                                                                                                                         ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |main|ULA:inst6|Mux17                                                                                                                                                                  ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |main|ULA:inst6|Mux15                                                                                                                                                                  ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; No         ; |main|ULA:inst6|Mux25                                                                                                                                                                  ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 40 LEs               ; 12 LEs                 ; No         ; |main|ULA:inst6|Mux7                                                                                                                                                                   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |main|ULA:inst6|Mux28                                                                                                                                                                  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |main|ULA:inst6|Mux29                                                                                                                                                                  ;
 ; 21:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |main|ULA:inst6|Mux3                                                                                                                                                                   ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                               ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                                  ;
@@ -732,7 +731,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; Top              ; 00:00:08     ;
+; Top              ; 00:00:14     ;
 ; sld_hub:auto_hub ; 00:00:00     ;
 +------------------+--------------+
 
@@ -743,7 +742,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Feb 09 18:58:50 2025
+    Info: Processing started: Mon Feb 10 19:06:10 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off OACLE2 -c OACLE2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
@@ -799,10 +798,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux_3to
 Info (12021): Found 1 design units, including 1 entities, in source file zero_extensor.v
     Info (12023): Found entity 1: zero_extensor
 Info (12127): Elaborating entity "main" for the top level hierarchy
+Warning (275011): Block or symbol "mux_2to1Reg" of instance "inst18" overlaps another block or symbol
 Warning (275011): Block or symbol "DataRam" of instance "inst2" overlaps another block or symbol
 Warning (275011): Block or symbol "Controle_ULA" of instance "inst5" overlaps another block or symbol
 Warning (275002): No superset bus at connection
 Info (12128): Elaborating entity "div_freq" for hierarchy "div_freq:inst32"
+Warning (10230): Verilog HDL assignment warning at div_freq.v(10): truncated value with size 32 to match size of target (3)
 Info (12128): Elaborating entity "Controladora" for hierarchy "Controladora:inst36"
 Info (12128): Elaborating entity "MemInstrucaoF" for hierarchy "MemInstrucaoF:inst31"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "MemInstrucaoF:inst31|altsyncram:altsyncram_component"
@@ -829,8 +830,8 @@ Info (12128): Elaborating entity "altsyncram_74d1" for hierarchy "MemInstrucaoF:
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sve2.tdf
     Info (12023): Found entity 1: altsyncram_sve2
 Info (12128): Elaborating entity "altsyncram_sve2" for hierarchy "MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1"
-Warning (113028): 4086 out of 4096 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 10 to 4095 are not initialized
+Warning (113028): 4092 out of 4096 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 4 to 4095 are not initialized
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12130): Elaborated megafunction instantiation "MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2"
 Info (12133): Instantiated megafunction "MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter:
@@ -946,8 +947,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_divide_vfm
 Info (13014): Ignored 222 buffer(s)
     Info (13019): Ignored 222 SOFT buffer(s)
-Warning (13012): Latch Controle_ULA:inst5|Jr has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1|q_a[0]
 Warning (13012): Latch Controle_ULA:inst5|Unsigned has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1|q_a[0]
 Warning (13012): Latch Controle_ULA:inst5|ULAopcode[0] has unsafe behavior
@@ -958,29 +957,24 @@ Warning (13012): Latch Controle_ULA:inst5|ULAopcode[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1|q_a[4]
 Warning (13012): Latch Controle_ULA:inst5|ULAopcode[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1|q_a[1]
+Warning (13012): Latch Controle_ULA:inst5|Jr has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1|q_a[0]
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
-Info (144001): Generated suppressed messages file C:/Users/Kauan/Documents/OAC/output_files/OACLE2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6762 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6776 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 472 output pins
-    Info (21061): Implemented 6117 logic cells
+    Info (21059): Implemented 530 output pins
+    Info (21061): Implemented 6073 logic cells
     Info (21064): Implemented 160 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 4701 megabytes
-    Info: Processing ended: Sun Feb 09 18:59:03 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Kauan/Documents/OAC/output_files/OACLE2.map.smsg.
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4693 megabytes
+    Info: Processing ended: Mon Feb 10 19:06:32 2025
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:19
 
 

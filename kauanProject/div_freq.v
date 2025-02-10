@@ -1,19 +1,13 @@
 module div_freq( 
-		input mini_clock,
-		output reg clock
+		input wire mini_clock,
+		output wire clock
 );
-integer i;
+reg [2:0] i;
 initial begin
-	i = 0;
+	i <= 0;
 end
 always @(posedge mini_clock) begin
-	if (i == 3) begin
-		clock <= 1'b1;
-		i = 0;
-	end
-	else begin
-		clock <= 1'b0;
-		i = i + 1;
-	end
+	i <= i + 1;
 end
+assign clock = i[2];
 endmodule
