@@ -9,16 +9,27 @@ entity main is
         Clock           : out    vl_logic;
         MiniCLOCK       : in     vl_logic;
         UnknownOpcode   : out    vl_logic;
-        Jump            : out    vl_logic;
-        JR              : out    vl_logic;
         OVERFLOW        : out    vl_logic;
+        RegDst          : out    vl_logic;
+        MemParaReg      : out    vl_logic;
+        EscreveReg      : out    vl_logic;
+        EscreveMem      : out    vl_logic;
+        Jump            : out    vl_logic;
+        Jal             : out    vl_logic;
+        Branch          : out    vl_logic;
+        BNE             : out    vl_logic;
         at              : out    vl_logic_vector(31 downto 0);
         CONVERTEDADDR   : out    vl_logic_vector(13 downto 0);
+        INDATABREG      : out    vl_logic_vector(31 downto 0);
         INSTRUCAO       : out    vl_logic_vector(31 downto 0);
         IROUTPUT        : out    vl_logic_vector(31 downto 0);
+        OpULA           : out    vl_logic_vector(2 downto 0);
+        OrigULA         : out    vl_logic_vector(1 downto 0);
         PC              : out    vl_logic_vector(31 downto 0);
         ra              : out    vl_logic_vector(31 downto 0);
-        RULA            : out    vl_logic_vector(31 downto 0);
+        RD              : out    vl_logic_vector(4 downto 0);
+        RS              : out    vl_logic_vector(4 downto 0);
+        RT              : out    vl_logic_vector(4 downto 0);
         t0              : out    vl_logic_vector(31 downto 0);
         t1              : out    vl_logic_vector(31 downto 0);
         t2              : out    vl_logic_vector(31 downto 0);
@@ -27,6 +38,7 @@ entity main is
         ULAA            : out    vl_logic_vector(31 downto 0);
         ULAB            : out    vl_logic_vector(31 downto 0);
         ULAOPCODE       : out    vl_logic_vector(3 downto 0);
+        ULAR            : out    vl_logic_vector(31 downto 0);
         zero            : out    vl_logic_vector(31 downto 0)
     );
 end main;

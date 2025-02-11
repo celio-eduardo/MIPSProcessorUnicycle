@@ -3,16 +3,27 @@ use verilog.vl_types.all;
 entity main_vlg_check_tst is
     port(
         at              : in     vl_logic_vector(31 downto 0);
+        BNE             : in     vl_logic;
+        Branch          : in     vl_logic;
         Clock           : in     vl_logic;
         CONVERTEDADDR   : in     vl_logic_vector(13 downto 0);
+        EscreveMem      : in     vl_logic;
+        EscreveReg      : in     vl_logic;
+        INDATABREG      : in     vl_logic_vector(31 downto 0);
         INSTRUCAO       : in     vl_logic_vector(31 downto 0);
         IROUTPUT        : in     vl_logic_vector(31 downto 0);
-        JR              : in     vl_logic;
+        Jal             : in     vl_logic;
         Jump            : in     vl_logic;
+        MemParaReg      : in     vl_logic;
+        OpULA           : in     vl_logic_vector(2 downto 0);
+        OrigULA         : in     vl_logic_vector(1 downto 0);
         OVERFLOW        : in     vl_logic;
         PC              : in     vl_logic_vector(31 downto 0);
         ra              : in     vl_logic_vector(31 downto 0);
-        RULA            : in     vl_logic_vector(31 downto 0);
+        RD              : in     vl_logic_vector(4 downto 0);
+        RegDst          : in     vl_logic;
+        RS              : in     vl_logic_vector(4 downto 0);
+        RT              : in     vl_logic_vector(4 downto 0);
         t0              : in     vl_logic_vector(31 downto 0);
         t1              : in     vl_logic_vector(31 downto 0);
         t2              : in     vl_logic_vector(31 downto 0);
@@ -21,6 +32,7 @@ entity main_vlg_check_tst is
         ULAA            : in     vl_logic_vector(31 downto 0);
         ULAB            : in     vl_logic_vector(31 downto 0);
         ULAOPCODE       : in     vl_logic_vector(3 downto 0);
+        ULAR            : in     vl_logic_vector(31 downto 0);
         UnknownOpcode   : in     vl_logic;
         zero            : in     vl_logic_vector(31 downto 0);
         sampler_rx      : in     vl_logic
