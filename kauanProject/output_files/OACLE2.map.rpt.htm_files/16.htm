@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD>
+<TITLE>Registers Removed During Synthesis</TITLE>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.layout-latest.css">
+<link rel="stylesheet" type="text/css" href="css/override.css">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+
+
+</HEAD>
+
+<BODY>
+<TABLE>
+<thead><TR  bgcolor="#BFBFBF">
+<TH>Register name</TH>
+<TH>Reason for Removal</TH>
+</TR>
+</thead><tbody><TR >
+<TD >PCBranch:inst11|ULA:inst2|LO[0..31]</TD>
+<TD >Stuck at GND due to stuck port clock</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >PCBranch:inst11|ULA:inst2|HI[0..31]</TD>
+<TD >Stuck at GND due to stuck port clock</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >PCpp:inst12|ULA:inst|LO[0..31]</TD>
+<TD >Stuck at GND due to stuck port clock</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >PCpp:inst12|ULA:inst|HI[0..31]</TD>
+<TD >Stuck at GND due to stuck port clock</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >Total Number of Removed Registers = 128</TD>
+<TD >&nbsp;</TD>
+</TR>
+</tbody></TABLE>
+
+<noscript>JavaScript must be enabled to view the report.</noscript>
+</BODY>
+</HTML>

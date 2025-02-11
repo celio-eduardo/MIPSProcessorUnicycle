@@ -1,0 +1,583 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD>
+<TITLE>Analysis &amp; Synthesis Resource Utilization by Entity</TITLE>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.layout-latest.css">
+<link rel="stylesheet" type="text/css" href="css/override.css">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+
+
+</HEAD>
+
+<BODY>
+<TABLE>
+<thead><TR  bgcolor="#BFBFBF">
+<TH>Compilation Hierarchy Node</TH>
+<TH>LC Combinationals</TH>
+<TH>LC Registers</TH>
+<TH>Memory Bits</TH>
+<TH>DSP Elements</TH>
+<TH>DSP 9x9</TH>
+<TH>DSP 18x18</TH>
+<TH>Pins</TH>
+<TH>Virtual Pins</TH>
+<TH>Full Hierarchy Name</TH>
+<TH>Library Name</TH>
+</TR>
+</thead><tbody><TR >
+<TD >|main</TD>
+<TD >5058 (15)</TD>
+<TD >1302 (0)</TD>
+<TD >655360</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >4</TD>
+<TD >330</TD>
+<TD >0</TD>
+<TD >|main</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|BancoReg:inst4|</TD>
+<TD >1403 (1403)</TD>
+<TD >1024 (1024)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|BancoReg:inst4</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|Controladora:inst36|</TD>
+<TD >23 (23)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|Controladora:inst36</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|Controle_ULA:inst5|</TD>
+<TD >32 (32)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|Controle_ULA:inst5</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|DataRam:inst2|</TD>
+<TD >72 (0)</TD>
+<TD >4 (0)</TD>
+<TD >524288</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|altsyncram:altsyncram_component|</TD>
+<TD >72 (0)</TD>
+<TD >4 (0)</TD>
+<TD >524288</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2|altsyncram:altsyncram_component</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|altsyncram_m5c1:auto_generated|</TD>
+<TD >72 (0)</TD>
+<TD >4 (4)</TD>
+<TD >524288</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|decode_4oa:decode3|</TD>
+<TD >6 (6)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|decode_4oa:decode3</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|decode_4oa:deep_decode|</TD>
+<TD >2 (2)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|decode_4oa:deep_decode</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|mux_1kb:mux2|</TD>
+<TD >64 (64)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|DataRam:inst2|altsyncram:altsyncram_component|altsyncram_m5c1:auto_generated|mux_1kb:mux2</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|MemInstrucaoF:inst31|</TD>
+<TD >92 (0)</TD>
+<TD >65 (0)</TD>
+<TD >131072</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|altsyncram:altsyncram_component|</TD>
+<TD >92 (0)</TD>
+<TD >65 (0)</TD>
+<TD >131072</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|altsyncram_74d1:auto_generated|</TD>
+<TD >92 (0)</TD>
+<TD >65 (0)</TD>
+<TD >131072</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|altsyncram_sve2:altsyncram1|</TD>
+<TD >0 (0)</TD>
+<TD >0 (0)</TD>
+<TD >131072</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|altsyncram_sve2:altsyncram1</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sld_mod_ram_rom:mgl_prim2|</TD>
+<TD >92 (73)</TD>
+<TD >65 (56)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|</TD>
+<TD >19 (19)</TD>
+<TD >9 (9)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|MemInstrucaoF:inst31|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|PCBranch:inst11|</TD>
+<TD >30 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|PCBranch:inst11</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|ULA:inst2|</TD>
+<TD >30 (30)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|PCBranch:inst11|ULA:inst2</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|PCReg:inst24|</TD>
+<TD >62 (62)</TD>
+<TD >32 (32)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|PCReg:inst24</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|PCpp:inst12|</TD>
+<TD >30 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|PCpp:inst12</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|ULA:inst|</TD>
+<TD >30 (30)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|PCpp:inst12|ULA:inst</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|ULA:inst6|</TD>
+<TD >3010 (789)</TD>
+<TD >64 (64)</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >4</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|lpm_divide:Div0|</TD>
+<TD >1062 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Div0</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|lpm_divide_vfm:auto_generated|</TD>
+<TD >1062 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sign_div_unsign_9nh:divider|</TD>
+<TD >1062 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|alt_u_div_k5f:divider|</TD>
+<TD >1062 (1062)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Div0|lpm_divide_vfm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|lpm_divide:Mod0|</TD>
+<TD >1080 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Mod0</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|lpm_divide_28m:auto_generated|</TD>
+<TD >1080 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sign_div_unsign_9nh:divider|</TD>
+<TD >1080 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|alt_u_div_k5f:divider|</TD>
+<TD >1080 (1079)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|add_sub_mkc:add_sub_1|</TD>
+<TD >1 (1)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_mkc:add_sub_1</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|lpm_mult:Mult0|</TD>
+<TD >79 (0)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >4</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_mult:Mult0</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|mult_l8t:auto_generated|</TD>
+<TD >79 (79)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >4</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|ULA:inst6|lpm_mult:Mult0|mult_l8t:auto_generated</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|div_freq:inst32|</TD>
+<TD >45 (45)</TD>
+<TD >33 (33)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|div_freq:inst32</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|mux_2to1:inst1|</TD>
+<TD >32 (32)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|mux_2to1:inst1</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|mux_2to1:inst3|</TD>
+<TD >33 (33)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|mux_2to1:inst3</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|mux_2to1Reg:inst18|</TD>
+<TD >5 (5)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|mux_2to1Reg:inst18</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|mux_3to1:inst25|</TD>
+<TD >63 (63)</TD>
+<TD >0 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|mux_3to1:inst25</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;|sld_hub:auto_hub|</TD>
+<TD >111 (1)</TD>
+<TD >80 (0)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|sld_hub:auto_hub</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|</TD>
+<TD >110 (73)</TD>
+<TD >80 (52)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sld_rom_sr:hub_info_reg|</TD>
+<TD >20 (20)</TD>
+<TD >9 (9)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg</TD>
+<TD >work</TD>
+</TR>
+</tbody><tbody><TR >
+<TD >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|sld_shadow_jsm:shadow_jsm|</TD>
+<TD >17 (17)</TD>
+<TD >19 (19)</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >|main|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm</TD>
+<TD >work</TD>
+</TR>
+</tbody></TABLE>
+
+<noscript>JavaScript must be enabled to view the report.</noscript>
+</BODY>
+</HTML>
